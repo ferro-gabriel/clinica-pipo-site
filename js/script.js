@@ -10,7 +10,64 @@ document.addEventListener('DOMContentLoaded', () => {
   setupFaqAccordion();
   setupModalidadesModal();
   setupNavDropdown();
+  setupBackToTop();
+  setupSmoothScroll();
 });
+
+// Deixa a rolagem do mouse mais suave (Lenis). Toque continua com a rolagem
+// nativa do celular — só o scroll de roda/trackpad no desktop é suavizado.
+function setupSmoothScroll() {
+  if (typeof Lenis === 'undefined') return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // Elementos com rolagem própria (menu mobile, modal) não devem ser controlados pelo Lenis.
+  document.querySelectorAll('.mobile-menu-overlay, .modalidade-modal, .nav-dropdown-panel').forEach((el) => {
+    el.setAttribute('data-lenis-prevent', '');
+  });
+
+  const lenis = new Lenis({
+    duration: 1.1,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  // Faz os links para #ancora da própria página rolarem suavemente, considerando o header fixo.
+  document.querySelectorAll('a[href*="#"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      let url;
+      try {
+        url = new URL(link.href, window.location.href);
+      } catch {
+        return;
+      }
+      if (url.pathname !== window.location.pathname || !url.hash) return;
+      const target = document.querySelector(url.hash);
+      if (!target) return;
+      e.preventDefault();
+      lenis.scrollTo(target, { offset: -90 });
+    });
+  });
+}
+
+// Mostra o botão "voltar ao topo" depois de rolar a página, e rola suavemente ao clicar.
+function setupBackToTop() {
+  const btn = document.getElementById('back-to-top');
+  if (!btn) return;
+
+  const toggle = () => btn.classList.toggle('is-visible', window.scrollY > 600);
+  toggle();
+  window.addEventListener('scroll', toggle, { passive: true });
+
+  btn.addEventListener('click', () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+  });
+}
 
 function setFooterYear() {
   const el = document.getElementById('current-year');
