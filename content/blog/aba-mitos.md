@@ -9,7 +9,7 @@ cover: "assets/blog/aba-mitos-cover.jpg"
 authorName: "Dr. Miguel Antonio Higuera Cancino"
 authorRole: "Fonoaudiólogo e Psicopedagogo — Coordenador Clínico"
 authorBio: "Mais de 30 anos dedicados à avaliação e ao desenvolvimento de pessoas autistas, com formação no protocolo ADOS-2 e atuação em ABA, CAA, PROMPT e Denver."
-authorPhoto: "assets/avatar-generico.svg"
+authorPhoto: "assets/dr-miguel.jpg"
 ---
 Poucas siglas geram tanto debate entre famílias de autistas quanto o ABA (Análise do Comportamento Aplicada). Parte da confusão vem de práticas antigas, já abandonadas, que ainda circulam como se fossem o padrão atual. Vamos separar o que é mito do que é, de fato, como o ABA funciona hoje.
 

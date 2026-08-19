@@ -41,5 +41,5 @@ collections:
       - { label: "Nome do autor", name: "authorName", widget: "string", default: "Dr. Miguel Antonio Higuera Cancino" }
       - { label: "Cargo do autor", name: "authorRole", widget: "string", default: "Fonoaudiólogo e Psicopedagogo — Coordenador Clínico" }
       - { label: "Bio do autor", name: "authorBio", widget: "text", default: "Mais de 30 anos dedicados à avaliação e ao desenvolvimento de pessoas autistas, com formação no protocolo ADOS-2 e atuação em ABA, CAA, PROMPT e Denver." }
-      - { label: "Foto do autor", name: "authorPhoto", widget: "image", default: "assets/avatar-generico.svg" }
+      - { label: "Foto do autor", name: "authorPhoto", widget: "image", default: "assets/dr-miguel.jpg" }
       - { label: "Texto do post", name: "body", widget: "markdown" }

@@ -9,7 +9,7 @@ cover: "assets/blog/caa-cover.jpg"
 authorName: "Dr. Miguel Antonio Higuera Cancino"
 authorRole: "Fonoaudiólogo e Psicopedagogo — Coordenador Clínico"
 authorBio: "Mais de 30 anos dedicados à avaliação e ao desenvolvimento de pessoas autistas, com formação no protocolo ADOS-2 e atuação em ABA, CAA, PROMPT e Denver."
-authorPhoto: "assets/avatar-generico.svg"
+authorPhoto: "assets/dr-miguel.jpg"
 ---
 Comunicar-se vai muito além de falar. Para pessoas com dificuldades de fala — sejam elas autistas ou não — a Comunicação Aumentativa e Alternativa (CAA) abre um caminho para se expressar, ser compreendido e participar ativamente da própria vida.
 

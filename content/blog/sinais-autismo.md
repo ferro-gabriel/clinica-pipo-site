@@ -9,7 +9,7 @@ cover: "assets/blog/sinais-autismo-cover.jpg"
 authorName: "Dr. Miguel Antonio Higuera Cancino"
 authorRole: "Fonoaudiólogo e Psicopedagogo — Coordenador Clínico"
 authorBio: "Mais de 30 anos dedicados à avaliação e ao desenvolvimento de pessoas autistas, com formação no protocolo ADOS-2 e atuação em ABA, CAA, PROMPT e Denver."
-authorPhoto: "assets/avatar-generico.svg"
+authorPhoto: "assets/dr-miguel.jpg"
 ---
 Muitos pais notam diferenças no desenvolvimento do filho antes mesmo de qualquer profissional apontar algo — e essa percepção costuma ser o primeiro passo em direção à avaliação. Reconhecer sinais precoces do Transtorno do Espectro Autista (TEA) não significa fechar um diagnóstico em casa, mas sim saber quando vale a pena buscar uma avaliação especializada.
 
