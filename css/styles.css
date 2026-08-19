@@ -564,7 +564,8 @@ body.is-menu-open .mobile-menu-overlay {
    ========================================================= */
 .orientacao-section { position: relative; overflow: hidden; background: #fff; padding: 5rem 0; }
 @media (min-width: 768px) { .orientacao-section { padding: 7rem 0; } }
-.orientacao-decor-1 { position: absolute; left: -1.5rem; top: 6rem; height: 8rem; width: 8rem; opacity: 0.85; pointer-events: none; }
+.orientacao-decor-1 { position: absolute; left: -1.5rem; top: 0.75rem; height: 4rem; width: 4rem; opacity: 0.85; pointer-events: none; z-index: 0; }
+@media (min-width: 768px) { .orientacao-decor-1 { left: -2rem; top: 1.25rem; height: 5.5rem; width: 5.5rem; } }
 .orientacao-decor-2 { position: absolute; right: 2.5rem; bottom: 2.5rem; height: 8rem; width: 8rem; border-radius: 1.5rem; background: rgba(255,204,0,0.4); transform: rotate(12deg); pointer-events: none; }
 .orientacao-grid { position: relative; max-width: 80rem; margin: 0 auto; padding: 0 1.25rem; display: grid; gap: 3.5rem; }
 @media (min-width: 768px) { .orientacao-grid { padding: 0 2.5rem; } }
@@ -819,8 +820,12 @@ body.modalidade-modal-open { overflow: hidden; }
    ========================================================= */
 .depoimentos-section { position: relative; overflow: hidden; background: var(--bg-purple-light); padding: 5rem 0; }
 @media (min-width: 768px) { .depoimentos-section { padding: 7rem 0; } }
-.depoimentos-decor-1 { position: absolute; left: 2.5rem; top: 2.5rem; height: 4rem; width: 4rem; border-radius: 999px; background: var(--yellow); pointer-events: none; }
-.depoimentos-decor-2 { position: absolute; right: 4rem; top: 6rem; height: 2.5rem; width: 2.5rem; background: var(--green); transform: rotate(45deg); pointer-events: none; }
+.depoimentos-decor-1 { position: absolute; left: 1.25rem; top: 1rem; height: 2.75rem; width: 2.75rem; border-radius: 999px; background: var(--yellow); pointer-events: none; }
+.depoimentos-decor-2 { position: absolute; right: 1.5rem; top: 1.25rem; height: 1.5rem; width: 1.5rem; background: var(--green); transform: rotate(45deg); pointer-events: none; }
+@media (min-width: 768px) {
+  .depoimentos-decor-1 { left: 2.5rem; top: 2.5rem; height: 4rem; width: 4rem; }
+  .depoimentos-decor-2 { right: 4rem; top: 6rem; height: 2.5rem; width: 2.5rem; }
+}
 .depoimentos-grid { position: relative; margin-top: 3rem; display: grid; gap: 1.5rem; }
 @media (min-width: 768px) { .depoimentos-grid { grid-template-columns: repeat(3, 1fr); } }
 .depoimento-card { display: flex; height: 100%; flex-direction: column; border-radius: 1.75rem; background: #fff; padding: 1.75rem; box-shadow: 0 20px 45px -30px rgba(11,34,57,0.7); }
@@ -857,7 +862,12 @@ body.modalidade-modal-open { overflow: hidden; }
   padding: 0.75rem;
   box-shadow: 0 8px 24px -18px rgba(11,34,57,0.5);
 }
-@media (max-width: 479px) { .convenio-item { flex-basis: 100%; } }
+@media (max-width: 639px) {
+  .convenios-scroll { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+  .convenio-item { flex-basis: auto; min-height: 60px; gap: 0.5rem; padding: 0.6rem; }
+  .convenio-logo { height: 2.25rem; width: 2.25rem; }
+  .convenio-name { font-size: 0.8rem; }
+}
 .convenio-logo { display: flex; height: 2.75rem; width: 2.75rem; flex-shrink: 0; align-items: center; justify-content: center; overflow: hidden; border-radius: 0.65rem; background: #fff; border: 1px solid rgba(11,34,57,0.08); }
 .convenio-logo img { height: 100%; width: 100%; object-fit: contain; padding: 0.2rem; }
 .convenio-logo-fallback { font-family: var(--font-display); font-size: 0.7rem; font-weight: 800; color: #fff; text-align: center; line-height: 1; border: none; }
