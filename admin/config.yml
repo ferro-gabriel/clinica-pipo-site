@@ -1,8 +1,9 @@
 backend:
   name: github
-  repo: SEU_USUARIO/SEU_REPOSITORIO # troque pelo usuário/repositório do GitHub (ex: joaosilva/clinica-pipo-site)
+  repo: ferro-gabriel/clinica-pipo-site
   branch: main
-  base_url: https://SEU-PROXY-DE-LOGIN.vercel.app # troque pela URL do proxy de login (passo a passo enviado à parte)
+  base_url: https://clinica-pipo-site.vercel.app # confirme essa URL depois do deploy no Vercel (pode vir diferente) e me avise se mudar
+  auth_endpoint: api/auth
 
 publish_mode: simple
 media_folder: "assets/blog"
