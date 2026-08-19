@@ -1,0 +1,45 @@
+name: Publicar site na Hostinger
+
+# Roda toda vez que algo é salvo na branch main — seja um post novo pelo
+# painel (/admin) ou uma alteração de código. Gera o HTML do blog a partir
+# dos arquivos em content/blog e envia o site inteiro por FTP para a Hostinger.
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Gerar páginas do blog
+        run: npm run build:blog
+
+      - name: Publicar na Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
+            **/content/**
+            **/scripts/**
+            **/package.json
+            **/package-lock.json
+            **/.gitignore

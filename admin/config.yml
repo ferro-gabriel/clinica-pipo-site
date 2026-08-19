@@ -1,0 +1,45 @@
+backend:
+  name: github
+  repo: SEU_USUARIO/SEU_REPOSITORIO # troque pelo usuário/repositório do GitHub (ex: joaosilva/clinica-pipo-site)
+  branch: main
+  base_url: https://SEU-PROXY-DE-LOGIN.vercel.app # troque pela URL do proxy de login (passo a passo enviado à parte)
+
+publish_mode: simple
+media_folder: "assets/blog"
+public_folder: "assets/blog"
+
+collections:
+  - name: "blog"
+    label: "Posts do Blog"
+    label_singular: "Post"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Resumo (aparece na listagem e no Google)", name: "description", widget: "text" }
+      - { label: "Data de publicação", name: "date", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "Tempo de leitura", name: "readTime", widget: "string", default: "5 min de leitura" }
+      - label: "Categoria"
+        name: "tag"
+        widget: "select"
+        options: ["Avaliação", "Comunicação", "Intervenção ABA", "Terapias", "Família", "Rotina"]
+      - label: "Cor da categoria"
+        name: "tagColor"
+        widget: "select"
+        options:
+          - { label: "Azul", value: "#019bef" }
+          - { label: "Roxo", value: "#7c4dff" }
+          - { label: "Rosa", value: "#e8368f" }
+          - { label: "Laranja", value: "#ff5722" }
+          - { label: "Verde", value: "#3fb96b" }
+          - { label: "Amarelo", value: "#ffb300" }
+      - { label: "Foto de capa", name: "cover", widget: "image" }
+      - { label: "Nome do autor", name: "authorName", widget: "string", default: "Dr. Miguel Antonio Higuera Cancino" }
+      - { label: "Cargo do autor", name: "authorRole", widget: "string", default: "Fonoaudiólogo e Psicopedagogo — Coordenador Clínico" }
+      - { label: "Bio do autor", name: "authorBio", widget: "text", default: "Mais de 30 anos dedicados à avaliação e ao desenvolvimento de pessoas autistas, com formação no protocolo ADOS-2 e atuação em ABA, CAA, PROMPT e Denver." }
+      - { label: "Foto do autor", name: "authorPhoto", widget: "image", default: "assets/avatar-generico.svg" }
+      - { label: "Texto do post", name: "body", widget: "markdown" }

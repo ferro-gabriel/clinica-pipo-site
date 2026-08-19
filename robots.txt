@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://clinicadeautismopipo.com.br/sitemap.xml

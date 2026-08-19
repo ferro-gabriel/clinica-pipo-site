@@ -1,0 +1,48 @@
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <img src="assets/logo-pipo-branco-horizontal.png" alt="Pipo | Clínica de Autismo" class="footer-logo" width="200" height="56" />
+      <p class="footer-brand-desc">Avaliação e atendimento terapêutico em Blumenau e Itapema, Santa Catarina.</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/clinicadeautismo.pipo/?hl=pt-br" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="icon" width="16" height="16"><use href="#icon-instagram"/></svg></a>
+        <a href="https://www.tiktok.com/@autismo.pipo.tv" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg class="icon" width="16" height="16"><use href="#icon-tiktok"/></svg></a>
+        <a href="https://www.youtube.com/@PipoTVautismo" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg class="icon" width="16" height="16"><use href="#icon-youtube"/></svg></a>
+        <a href="https://www.facebook.com/clinicadeautismopipo" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="icon" width="16" height="16"><use href="#icon-facebook"/></svg></a>
+      </div>
+    </div>
+    <nav class="footer-nav">
+      <p class="footer-col-title">Navegue</p>
+      <ul>
+        <li><a href="index.html#orientacao">Orientação inicial</a></li>
+        <li><a href="index.html#multidisciplinar">Terapias</a></li>
+        <li><a href="index.html#aba">Intervenção ABA</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#faq">Perguntas frequentes</a></li>
+      </ul>
+    </nav>
+    <div class="footer-contact">
+      <p class="footer-col-title">Contato</p>
+      <p>Blumenau: (47) 99963-1084</p>
+      <p>Itapema: (47) 99106-9487</p>
+      <p class="footer-email">contato@clinicaautismopipo.com</p>
+    </div>
+    <div class="footer-address">
+      <p class="footer-col-title">Endereço</p>
+      <p>Blumenau: Rua Hermann Tribess, 1787 - 1º e 2º andar - Tribess, Blumenau/SC, 89057-473</p>
+      <p>Itapema: Rua 210, 130 - Meia Praia, Itapema/SC, 88220-000</p>
+    </div>
+  </div>
+  <p class="footer-copy">© <span id="current-year"></span> Clínica de Autismo Pipo. Todos os direitos reservados.</p>
+</footer>
+<script>
+  (() => {
+    const nav = document.querySelector('.nav');
+    if (!nav) return;
+    const updateHeader = () => { nav.classList.toggle('is-scrolled', window.scrollY > 12); };
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+  })();
+</script>
+<script src="js/script.js"></script>
+</body>
+</html>

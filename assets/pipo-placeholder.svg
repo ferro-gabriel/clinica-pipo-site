@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Espaço reservado para imagem">
+  <rect width="800" height="600" fill="#e8f4fc"/>
+  <defs>
+    <pattern id="pipoDots" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse">
+      <circle cx="3.2" cy="3.2" r="3.2" fill="#019bef" opacity="0.16"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#pipoDots)"/>
+  <g>
+    <rect x="312" y="274" width="176" height="52" rx="26" fill="#ffffff" fill-opacity="0.88" stroke="#019bef" stroke-opacity="0.28" stroke-width="2"/>
+    <text x="400" y="308" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="4" fill="#019bef" fill-opacity="0.78">IMAGEM</text>
+  </g>
+</svg>
