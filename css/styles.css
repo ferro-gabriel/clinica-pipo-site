@@ -577,6 +577,7 @@ body.is-menu-open .mobile-menu-overlay {
 .orientacao-item-title { font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; color: var(--navy); }
 .orientacao-item-desc { margin-top: 0.125rem; font-size: 0.875rem; color: var(--text-slate-3); }
 
+@media (min-width: 1024px) { .orientacao-media { margin-top: 5rem; } }
 .orientacao-media img { width: 100%; aspect-ratio: 4 / 5; border-radius: 2rem; object-fit: cover; }
 .orientacao-callout { margin-top: 1.25rem; border-radius: 2rem; background: var(--yellow); padding: 1.5rem; }
 .orientacao-callout-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--navy); }
@@ -808,6 +809,7 @@ body.modalidade-modal-open { overflow: hidden; }
 .coord-mascote { position: absolute; top: 50%; right: -4rem; transform: translateY(-50%); width: 16rem; opacity: 0.06; pointer-events: none; display: none; }
 @media (min-width: 1024px) { .coord-mascote { display: block; } }
 .coord-inner { position: relative; max-width: 48rem; margin: 0 auto; padding: 0 1.25rem; text-align: center; }
+.coord-photo { display: block; margin: 0 auto; width: 8rem; height: 8rem; border-radius: 999px; object-fit: cover; border: 4px solid rgba(255,255,255,0.15); box-shadow: 0 20px 40px -20px rgba(0,0,0,0.6); }
 @media (min-width: 768px) { .coord-inner { padding: 0 2.5rem; } }
 .coord-title { font-family: var(--font-display); margin-top: 0.75rem; font-size: 40px; line-height: normal; font-weight: 800; color: #fff; }
 .coord-desc { margin-top: 1rem; font-size: 1.125rem; color: rgba(255,255,255,0.8); }
