@@ -520,15 +520,8 @@ body.is-menu-open .mobile-menu-overlay {
 }
 @media (min-width: 768px) { .hero-puzzle-decor { left: -2rem; top: -2rem; } }
 
-.hero-banner { 
-  margin-top: 4rem; /* Aumente este número (5rem, 6rem) se quiser afastar ainda mais */
-  background: var(--blue); 
-}
-
-@media (min-width: 1024px) {
-  .hero-banner {
-    margin-top: 6rem; /* Dá um respiro ainda maior na tela do computador */
-  }
+.hero-banner {
+  background: var(--blue);
 }
 .hero-banner-inner {
   max-width: 90rem;
