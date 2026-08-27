@@ -445,22 +445,23 @@ body.is-menu-open .mobile-menu-overlay {
   display: grid;
   gap: 2.5rem;
   align-items: center;
-  /* Espaçamento em celulares: 7rem no topo para desgrudar do menu */
-  padding: 7rem 1.25rem 1rem; 
+  /* Espaçamento em celulares: 7rem no topo para desgrudar do menu, e igual embaixo antes da faixa azul */
+  padding: 7rem 1.25rem 7rem;
 }
 
-@media (min-width: 768px) { 
-  .hero { 
-    /* Espaçamento em tablets: 8rem no topo */
-    padding: 8rem 2.5rem 1rem; 
-  } 
+@media (min-width: 768px) {
+  .hero {
+    /* Espaçamento em tablets: 8rem no topo e embaixo */
+    padding: 8rem 2.5rem 8rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .hero {
     grid-template-columns: 1.05fr 1fr;
-    /* ESPAÇAMENTO NO COMPUTADOR: escala com a altura da tela (vh) para caber inteiro em telas mais baixas */
+    /* ESPAÇAMENTO NO COMPUTADOR: escala com a altura da tela (vh), igual em cima e embaixo */
     padding-top: clamp(6rem, 3rem + 6vh, 9rem);
+    padding-bottom: clamp(6rem, 3rem + 6vh, 9rem);
   }
 }
 
