@@ -459,9 +459,7 @@ body.is-menu-open .mobile-menu-overlay {
 @media (min-width: 1024px) {
   .hero {
     grid-template-columns: 1.05fr 1fr;
-    /* ESPAÇAMENTO NO COMPUTADOR: valor fixo (não escala mais com vh). O padding-bottom
-       é calculado para que o vão do quebra-cabeça até o header (padding-top - 5.1rem
-       de nav - 2rem do offset do quebra-cabeça) fique igual ao vão da foto até a faixa azul. */
+    /* ESPAÇAMENTO NO COMPUTADOR: valor fixo (não escala mais com vh). */
     padding-top: 9rem;
     padding-bottom: 4rem;
   }
@@ -515,13 +513,13 @@ body.is-menu-open .mobile-menu-overlay {
   position: absolute;
   z-index: 0;
   left: -1.25rem;
-  top: -1.5rem;
+  top: 1.5rem;
   width: 30%;
   min-width: 4.5rem;
   max-width: 9rem;
   filter: drop-shadow(0 12px 20px rgba(11,34,57,0.25));
 }
-@media (min-width: 768px) { .hero-puzzle-decor { left: -2rem; top: -2rem; } }
+@media (min-width: 768px) { .hero-puzzle-decor { left: -2rem; top: 2rem; } }
 
 .hero-banner {
   background: var(--blue);
@@ -559,7 +557,8 @@ body.is-menu-open .mobile-menu-overlay {
 .stat-label { margin-top: 1rem; font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--navy); }
 @media (min-width: 640px) { .stat-label { font-size: 1.125rem; } }
 .stat-sub { margin-top: 0.25rem; font-size: 0.875rem; color: var(--text-muted); }
-.stat-google-link { margin-top: 0.25rem; display: inline-block; font-size: 0.875rem; font-weight: 700; color: var(--blue); text-decoration: underline; text-decoration-color: rgba(1,155,239,0.4); text-underline-offset: 2px; }
+.stat-google-links { margin-top: 0.25rem; display: flex; flex-direction: column; align-items: center; gap: 0.15rem; }
+.stat-google-link { display: inline-block; font-size: 0.875rem; font-weight: 700; color: var(--blue); text-decoration: underline; text-decoration-color: rgba(1,155,239,0.4); text-underline-offset: 2px; }
 .stat-google-link:hover { text-decoration-color: var(--blue); }
 
 /* =========================================================
