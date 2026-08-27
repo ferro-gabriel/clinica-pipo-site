@@ -513,13 +513,13 @@ body.is-menu-open .mobile-menu-overlay {
   position: absolute;
   z-index: 0;
   left: -1.25rem;
-  top: 1.5rem;
+  top: -1.5rem;
   width: 30%;
   min-width: 4.5rem;
   max-width: 9rem;
   filter: drop-shadow(0 12px 20px rgba(11,34,57,0.25));
 }
-@media (min-width: 768px) { .hero-puzzle-decor { left: -2rem; top: 2rem; } }
+@media (min-width: 768px) { .hero-puzzle-decor { left: -2rem; top: -2rem; } }
 
 .hero-banner {
   background: var(--blue);
