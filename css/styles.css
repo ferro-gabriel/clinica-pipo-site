@@ -517,7 +517,6 @@ body.is-menu-open .mobile-menu-overlay {
   width: 30%;
   min-width: 4.5rem;
   max-width: 9rem;
-  filter: drop-shadow(0 12px 20px rgba(11,34,57,0.25));
 }
 @media (min-width: 768px) { .hero-puzzle-decor { left: -2rem; top: -2rem; } }
 
