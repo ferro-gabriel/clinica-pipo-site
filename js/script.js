@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupCountUp();
   setupFaqAccordion();
   setupModalidadesModal();
+  setupAvaliacaoModals();
   setupNavDropdown();
   setupBackToTop();
   setupSmoothScroll();
@@ -292,6 +293,37 @@ function setupModalidadesModal() {
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
+  });
+}
+
+// Abre os pop-ups de "Avaliação TEA" e "Avaliação Neuropsicológica" (seção Avaliações).
+function setupAvaliacaoModals() {
+  const triggers = document.querySelectorAll('[data-open-modal]');
+  if (!triggers.length) return;
+
+  triggers.forEach((trigger) => {
+    const overlay = document.getElementById(trigger.dataset.openModal);
+    if (!overlay) return;
+
+    const dialog = overlay.querySelector('.modalidade-modal');
+    const closeBtn = overlay.querySelector('.modalidade-modal-close');
+
+    function open() {
+      overlay.classList.add('is-open');
+      document.body.classList.add('modalidade-modal-open');
+    }
+    function close() {
+      overlay.classList.remove('is-open');
+      document.body.classList.remove('modalidade-modal-open');
+    }
+
+    trigger.addEventListener('click', open);
+    overlay.addEventListener('click', close);
+    dialog.addEventListener('click', (e) => e.stopPropagation());
+    closeBtn.addEventListener('click', close);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
+    });
   });
 }
 

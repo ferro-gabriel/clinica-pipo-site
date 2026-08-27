@@ -531,10 +531,11 @@ body.is-menu-open .mobile-menu-overlay {
   gap: 1.5rem;
   align-items: center;
   padding: 2rem 1.25rem;
+  text-align: center;
 }
-@media (min-width: 768px) { .hero-banner-inner { grid-template-columns: 1.2fr 1fr; padding: 1.5rem 2.5rem; } }
+@media (min-width: 768px) { .hero-banner-inner { grid-template-columns: 1.2fr 1fr; padding: 1.5rem 2.5rem; text-align: left; } }
 .hero-banner-text { font-family: var(--font-display); font-weight: 800; font-size: 28px; line-height: normal; color: #fff; }
-.hero-banner-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.hero-banner-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
 @media (min-width: 768px) { .hero-banner-actions { justify-content: flex-end; } }
 
 /* =========================================================
@@ -542,9 +543,10 @@ body.is-menu-open .mobile-menu-overlay {
    ========================================================= */
 .stats-section { position: relative; overflow: hidden; background: var(--bg-yellow-light); padding: 2rem 0 2.5rem; }
 @media (min-width: 1024px) { .stats-section { padding: 1.25rem 0 1.5rem; } }
-.decor-puzzle, .decor-mascote { object-fit: contain; filter: drop-shadow(0 10px 18px rgba(11,34,57,0.18)); }
+.decor-puzzle { object-fit: contain; filter: drop-shadow(0 10px 18px rgba(11,34,57,0.18)); }
 
 .stats-decor-1 { position: absolute; right: -2rem; top: 1.5rem; height: 6rem; width: 6rem; opacity: 0.9; pointer-events: none; }
+@media (max-width: 767px) { .stats-decor-1 { display: none; } }
 .stats-decor-2 { position: absolute; left: -2.5rem; bottom: 1.5rem; height: 7rem; width: 7rem; border-radius: 1.5rem; background: rgba(1,155,239,0.1); transform: rotate(12deg); pointer-events: none; }
 .stats-grid { position: relative; margin-top: 2rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 @media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); column-gap: 2.5rem; } }
@@ -566,8 +568,6 @@ body.is-menu-open .mobile-menu-overlay {
    ========================================================= */
 .orientacao-section { position: relative; overflow: hidden; background: #fff; padding: 5rem 0; }
 @media (min-width: 768px) { .orientacao-section { padding: 7rem 0; } }
-.orientacao-decor-1 { position: absolute; left: -1.5rem; top: 0.75rem; height: 4rem; width: 4rem; opacity: 0.85; pointer-events: none; z-index: 0; }
-@media (min-width: 768px) { .orientacao-decor-1 { left: -2rem; top: 1.25rem; height: 5.5rem; width: 5.5rem; } }
 .orientacao-decor-2 { position: absolute; right: 2.5rem; bottom: 2.5rem; height: 8rem; width: 8rem; border-radius: 1.5rem; background: rgba(255,204,0,0.4); transform: rotate(12deg); pointer-events: none; }
 .orientacao-grid { position: relative; max-width: 80rem; margin: 0 auto; padding: 0 1.25rem; display: grid; gap: 3.5rem; }
 @media (min-width: 768px) { .orientacao-grid { padding: 0 2.5rem; } }
@@ -635,7 +635,8 @@ body.is-menu-open .mobile-menu-overlay {
 
 .avaliacoes-grid { position: relative; margin-top: 2.5rem; display: grid; gap: 1rem; border-radius: 2rem; background: var(--blue); padding: 1.5rem; }
 @media (min-width: 640px) { .avaliacoes-grid { grid-template-columns: repeat(2, 1fr); padding: 2.5rem; } }
-.avaliacao-card { border-radius: 1rem; background: rgba(255,255,255,0.15); padding: 1.5rem; color: #fff; }
+.avaliacao-card { display: block; width: 100%; border: none; font: inherit; text-align: left; cursor: pointer; border-radius: 1rem; background: rgba(255,255,255,0.15); padding: 1.5rem; color: #fff; transition: transform 0.2s ease; }
+.avaliacao-card:hover { transform: translateY(-4px); }
 .avaliacao-icon { display: inline-flex; height: 3rem; width: 3rem; align-items: center; justify-content: center; border-radius: 0.85rem; background: rgba(255,255,255,0.22); color: #fff; }
 .avaliacao-title { font-family: var(--font-display); margin-top: 1rem; font-size: 1.5rem; font-weight: 700; color: #fff; }
 .avaliacao-desc { margin-top: 0.5rem; color: rgba(255,255,255,0.85); }
@@ -772,19 +773,6 @@ body.modalidade-modal-open { overflow: hidden; }
 .aba-cta-wrap { position: relative; margin-top: 3rem; text-align: center; }
 
 /* =========================================================
-   Avaliação Neuropsicológica
-   ========================================================= */
-.neuro-section { position: relative; overflow: hidden; background: var(--yellow); padding: 5rem 0; }
-@media (min-width: 768px) { .neuro-section { padding: 7rem 0; } }
-.neuro-inner { max-width: 52rem; margin: 0 auto; padding: 0 1.25rem; text-align: center; }
-@media (min-width: 768px) { .neuro-inner { padding: 0 2.5rem; } }
-.icon-quote { color: var(--navy); margin: 0 auto; display: block; }
-.neuro-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.5rem; text-align: left; }
-.neuro-item dt { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--navy); }
-.neuro-item dd { margin-top: 0.25rem; color: var(--text-brown-dark); }
-.neuro-cta { margin-top: 2.25rem; }
-
-/* =========================================================
    Diferenciais
    ========================================================= */
 .diferenciais-section { position: relative; overflow: hidden; background: var(--bg-beige); padding: 5rem 0; }
@@ -808,8 +796,6 @@ body.modalidade-modal-open { overflow: hidden; }
 .coord-section { position: relative; overflow: hidden; background: var(--bg-navy-dark); padding: 5rem 0; }
 @media (min-width: 768px) { .coord-section { padding: 7rem 0; } }
 .coord-dots { position: absolute; inset: 0; color: rgba(255,255,255,0.08); pointer-events: none; }
-.coord-mascote { position: absolute; top: 50%; right: -4rem; transform: translateY(-50%); width: 16rem; opacity: 0.06; pointer-events: none; display: none; }
-@media (min-width: 1024px) { .coord-mascote { display: block; } }
 .coord-inner { position: relative; max-width: 48rem; margin: 0 auto; padding: 0 1.25rem; text-align: center; }
 .coord-photo { display: block; margin: 0 auto; width: 8rem; height: 8rem; border-radius: 999px; object-fit: cover; border: 4px solid rgba(255,255,255,0.15); box-shadow: 0 20px 40px -20px rgba(0,0,0,0.6); }
 @media (min-width: 768px) { .coord-inner { padding: 0 2.5rem; } }
@@ -930,7 +916,7 @@ body.modalidade-modal-open { overflow: hidden; }
 @media (min-width: 640px) { .recrutamento-title { font-size: 1.875rem; } }
 .recrutamento-desc { max-width: 36rem; font-size: 0.875rem; color: var(--text-brown); }
 @media (min-width: 640px) { .recrutamento-desc { font-size: 1rem; } }
-.recrutamento-inner .btn { margin-top: 0.5rem; }
+.recrutamento-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 0.5rem; }
 
 /* =========================================================
    CTA final
