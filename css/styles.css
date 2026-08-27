@@ -459,9 +459,10 @@ body.is-menu-open .mobile-menu-overlay {
 @media (min-width: 1024px) {
   .hero {
     grid-template-columns: 1.05fr 1fr;
-    /* ESPAÇAMENTO NO COMPUTADOR: valor fixo (não escala mais com vh). */
-    padding-top: 9rem;
-    padding-bottom: 4rem;
+    /* ESPAÇAMENTO NO COMPUTADOR: escala com a altura da tela (vh), com piso mais alto
+       para não ficar apertado em monitores mais baixos (Windows/1080p, ultrawide 21:9). */
+    padding-top: clamp(7rem, 4rem + 6vh, 10rem);
+    padding-bottom: clamp(3rem, 1.5rem + 4vh, 5rem);
   }
 }
 
