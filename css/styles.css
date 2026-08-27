@@ -459,9 +459,11 @@ body.is-menu-open .mobile-menu-overlay {
 @media (min-width: 1024px) {
   .hero {
     grid-template-columns: 1.05fr 1fr;
-    /* ESPAÇAMENTO NO COMPUTADOR: escala com a altura da tela (vh), igual em cima e embaixo */
-    padding-top: clamp(6rem, 3rem + 6vh, 9rem);
-    padding-bottom: clamp(6rem, 3rem + 6vh, 9rem);
+    /* ESPAÇAMENTO NO COMPUTADOR: valor fixo (não escala mais com vh). O padding-bottom
+       é calculado para que o vão do quebra-cabeça até o header (padding-top - 5.1rem
+       de nav - 2rem do offset do quebra-cabeça) fique igual ao vão da foto até a faixa azul. */
+    padding-top: 9rem;
+    padding-bottom: 4rem;
   }
 }
 
