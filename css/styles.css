@@ -580,10 +580,10 @@ body.is-menu-open .mobile-menu-overlay {
 
 @media (min-width: 1024px) { .orientacao-media { margin-top: 5rem; } }
 .orientacao-media img { width: 100%; aspect-ratio: 4 / 5; border-radius: 2rem; object-fit: cover; }
-.orientacao-callout { margin-top: 1.25rem; border-radius: 2rem; background: var(--yellow); padding: 1.5rem; }
+.orientacao-callout { margin-top: 1.25rem; border-radius: 2rem; background: var(--yellow); padding: 1.5rem; text-align: center; }
 .orientacao-callout-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--navy); }
 .orientacao-callout-desc { margin-top: 0.5rem; color: var(--text-slate); }
-.orientacao-callout-actions { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.orientacao-callout-actions { margin-top: 1.25rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
 
 /* =========================================================
    Cuidado único
