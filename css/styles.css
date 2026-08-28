@@ -644,7 +644,7 @@ body.is-menu-open .mobile-menu-overlay {
 
 .modalidades-intro { position: relative; max-width: 38rem; margin: 0 auto; text-align: center; }
 .modalidades-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; border-radius: 999px; background: rgba(255,204,0,0.16); color: var(--yellow); font-weight: 800; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; }
-.modalidades-heading { margin: 1rem 0 0; font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem, 4.5vw, 2.75rem); color: #fff; }
+.modalidades-heading { margin: 1rem 0 0; font-family: var(--font-display); font-weight: 800; font-size: clamp(1.05rem, 4vw, 2.1rem); white-space: nowrap; color: #fff; }
 .modalidades-subtitle { margin: 0.9rem 0 0; font-size: 1.0625rem; line-height: 1.6; color: rgba(185,198,214,1); }
 
 .modalidades-grid2 { position: relative; margin-top: 3rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
