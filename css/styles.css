@@ -946,7 +946,8 @@ body.modalidade-modal-open { overflow: hidden; }
 .cta-final-dots { position: absolute; inset: 0; color: rgba(255,255,255,0.2); pointer-events: none; }
 .cta-final-inner { position: relative; max-width: 64rem; margin: 0 auto; padding: 0 1.25rem; text-align: center; }
 @media (min-width: 768px) { .cta-final-inner { padding: 0 2.5rem; } }
-.cta-final-title { font-family: var(--font-display); font-size: 56px; line-height: normal; font-weight: 800; color: #fff; }
+.cta-final-title { font-family: var(--font-display); font-size: clamp(1.6rem, 9vw, 56px); line-height: normal; font-weight: 800; color: #fff; }
+@media (max-width: 767px) { .cta-final-title { font-size: 2rem; max-width: 17rem; margin-left: auto; margin-right: auto; } }
 .cta-final-desc { margin: 1.25rem auto 0; max-width: 42rem; font-size: 1.125rem; color: rgba(255,255,255,0.9); }
 .cta-final-actions { margin-top: 2.25rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
 
