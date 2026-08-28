@@ -835,14 +835,14 @@ body.modalidade-modal-open { overflow: hidden; }
 .convenios-desc { margin-top: 0.75rem; text-align: center; color: var(--text-slate-3); }
 .convenios-scroll {
   margin-top: 3rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.85rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
 }
+@media (min-width: 640px) { .convenios-scroll { grid-template-columns: repeat(3, 1fr); gap: 0.85rem; } }
+@media (min-width: 1024px) { .convenios-scroll { grid-template-columns: repeat(5, 1fr); } }
 .convenio-item {
   display: flex;
-  flex: 0 1 230px;
   min-height: 72px;
   align-items: center;
   gap: 0.75rem;
@@ -853,8 +853,7 @@ body.modalidade-modal-open { overflow: hidden; }
   box-shadow: 0 8px 24px -18px rgba(11,34,57,0.5);
 }
 @media (max-width: 639px) {
-  .convenios-scroll { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
-  .convenio-item { flex-basis: auto; min-height: 60px; gap: 0.5rem; padding: 0.6rem; }
+  .convenio-item { min-height: 60px; gap: 0.5rem; padding: 0.6rem; }
   .convenio-logo { height: 2.25rem; width: 2.25rem; }
   .convenio-name { font-size: 0.8rem; }
 }
