@@ -175,8 +175,8 @@ const MODALIDADES_DATA = {
     color: '#ffb300',
     icon: '#icon-graduation-cap',
     indicado: 'Desenvolvimento da aprendizagem e habilidades acadêmicas, trabalhando atenção, memória, funções executivas, alfabetização, raciocínio e estratégias para facilitar o aprendizado.',
-    description: 'Cuida do processo de aprendizagem, fortalecendo atenção e memória e orientando estratégias para o ambiente escolar.',
-    trabalhamos: ['Atenção e memória', 'Estratégias de estudo e organização', 'Adaptações pedagógicas', 'Ponte com professores e AEE'],
+    description: 'Desenvolve o processo de aprendizagem, fortalecendo atenção e memória e orientando estratégias para o ambiente escolar.',
+    trabalhamos: ['Coordenação motora fina', 'Atenção e memória', 'Adaptações pedagógicas', 'Estratégias de estudo e organização'],
     abordagens: ['ABA'],
   },
   psicomot: {
