@@ -770,7 +770,7 @@ body.modalidade-modal-open { overflow: hidden; }
 .icon-aba { color: var(--deep-orange); }
 .aba-title { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--deep-orange); }
 @media (min-width: 640px) { .aba-title { font-size: 3rem; } }
-.aba-lead { position: relative; margin: 1.25rem 0 0; width: 100%; max-width: none; text-align: center; font-size: 0.875rem; line-height: 1.6; color: var(--text-brown); }
+.aba-lead { position: relative; margin: 1.25rem 0 0; width: 100%; max-width: none; text-align: center; font-size: 0.875rem; line-height: 1.6; color: var(--text-brown); text-wrap: balance; }
 
 .aba-cards { position: relative; margin-top: 3.5rem; display: grid; grid-template-columns: 1fr; gap: 1.75rem; align-items: stretch; }
 @media (min-width: 640px) { .aba-cards { grid-template-columns: repeat(2, 1fr); } }
