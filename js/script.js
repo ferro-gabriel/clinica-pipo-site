@@ -150,7 +150,7 @@ const MODALIDADES_DATA = {
     indicado: 'Crianças, adolescentes e adultos com atraso ou alteração de fala e linguagem.',
     description: 'Trabalha a comunicação verbal e não verbal, ampliando formas de expressão e compreensão da linguagem no ritmo de cada pessoa.',
     trabalhamos: ['Fala e articulação', 'Linguagem receptiva e expressiva', 'Comunicação alternativa (CAA/PECS)', 'Habilidades de conversação'],
-    abordagens: ['ABA', 'PROMPT', 'CAA'],
+    abordagens: ['ABA', 'PROMPT', 'CAA', 'Denver (ESDM)', 'PECS', 'Apraxia de Fala'],
   },
   to: {
     name: 'Terapia Ocupacional',
