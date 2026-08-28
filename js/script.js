@@ -204,7 +204,7 @@ const MODALIDADES_DATA = {
     indicado: 'Pessoas com alterações de tônus, marcha ou coordenação motora grossa.',
     description: 'Atua na força, equilíbrio e coordenação motora grossa, essenciais para postura, marcha e participação em atividades físicas.',
     trabalhamos: ['Força e tônus muscular', 'Equilíbrio e marcha', 'Coordenação motora grossa', 'Postura e alinhamento corporal'],
-    abordagens: ['Neuromotora', 'Conceito Bobath'],
+    abordagens: ['Neuromotora', 'Visomotora', 'Bobath', 'Psicomotricidade'],
   },
   nutri: {
     name: 'Nutrição',
