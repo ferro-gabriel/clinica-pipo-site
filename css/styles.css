@@ -596,7 +596,7 @@ body.is-menu-open .mobile-menu-overlay {
 
 .perguntas-grid { margin-top: 3.5rem; display: grid; gap: 1rem; }
 @media (min-width: 640px) { .perguntas-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .perguntas-grid-row { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 1024px) { .perguntas-grid-row { grid-template-columns: repeat(3, 1fr); } }
 .pergunta-card { height: 100%; border-radius: 1.75rem; padding: 1.5rem; }
 .pergunta-icon { display: flex; height: 2.75rem; width: 2.75rem; align-items: center; justify-content: center; border-radius: 0.75rem; color: #fff; }
 .pergunta-q { font-family: var(--font-display); margin-top: 1rem; font-size: 1.25rem; font-weight: 700; color: var(--navy); }
