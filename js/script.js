@@ -150,7 +150,7 @@ const MODALIDADES_DATA = {
     indicado: 'Desenvolvimento da fala, linguagem e comunicação, incluindo comunicação social e pragmática, CAA, apraxia e transtornos dos sons da fala.',
     description: 'Trabalha a comunicação verbal e não verbal, ampliando formas de expressão e compreensão da linguagem no ritmo de cada pessoa.',
     trabalhamos: ['Fala e articulação', 'Linguagem receptiva e expressiva', 'Comunicação alternativa (CAA/PECS)', 'Habilidades de conversação'],
-    abordagens: ['ABA', 'PROMPT', 'CAA', 'Denver (ESDM)', 'PECS', 'Apraxia de Fala', 'Musicoterapia'],
+    abordagens: ['ABA', 'PROMPT', 'CAA', 'Denver', 'Musicoterapia'],
   },
   to: {
     name: 'Terapia Ocupacional',
@@ -159,7 +159,7 @@ const MODALIDADES_DATA = {
     indicado: 'Desenvolvimento da autonomia, habilidades funcionais e participação, incluindo integração sensorial, coordenação motora, atividades de vida diária e regulação.',
     description: 'Atua no processamento sensorial e na coordenação motora fina, promovendo autonomia nas atividades do dia a dia.',
     trabalhamos: ['Processamento e integração sensorial', 'Coordenação motora fina', 'Atividades de vida diária (vestir-se, higiene)', 'Regulação emocional e controle inibitório'],
-    abordagens: ['ABA', 'Integração Sensorial em Ayres', 'Bobath', 'Denver', 'Seletividade Alimentar', 'TEACCH', 'PECS'],
+    abordagens: ['ABA', 'Integração Sensorial em Ayres', 'Bobath', 'Denver', 'Seletividade Alimentar'],
   },
   psico: {
     name: 'Psicologia',
@@ -168,7 +168,7 @@ const MODALIDADES_DATA = {
     indicado: 'Desenvolvimento de habilidades emocionais, comportamentais e sociais, trabalhando autorregulação, interação, flexibilidade, manejo de comportamentos e habilidades adaptativas.',
     description: 'Atua no comportamento e na regulação emocional, desenvolvendo habilidades sociais em contextos reais de convívio.',
     trabalhamos: ['Regulação emocional e manejo de crises', 'Habilidades sociais e brincar com pares', 'Redução de comportamentos desafiadores', 'Fortalecimento do cognitivo e memória processual'],
-    abordagens: ['ABA', 'Denver', 'TEACCH', 'TCC', 'Musicoterapia', 'Neuropsicologia'],
+    abordagens: ['ABA', 'Denver', 'TEACCH', 'TCC', 'Musicoterapia'],
   },
   psicoped: {
     name: 'Psicopedagogia',
@@ -186,7 +186,7 @@ const MODALIDADES_DATA = {
     indicado: 'Desenvolvimento da coordenação, equilíbrio, consciência corporal e planejamento motor, favorecendo habilidades motoras, organização corporal e participação nas atividades.',
     description: 'Desenvolve o corpo em movimento: equilíbrio, coordenação e esquema corporal como base para aprendizagem e autonomia.',
     trabalhamos: ['Equilíbrio e coordenação global', 'Esquema e consciência corporal', 'Lateralidade e orientação espacial', 'Planejamento motor para brincadeiras'],
-    abordagens: ['Psicomotricidade Relacional'],
+    abordagens: ['Psicomotricidade', 'Fisioterapia'],
   },
   musico: {
     name: 'Musicoterapia',
