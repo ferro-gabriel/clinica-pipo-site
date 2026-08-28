@@ -751,7 +751,7 @@ body.modalidade-modal-open { overflow: hidden; }
 .icon-aba { color: var(--deep-orange); }
 .aba-title { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--deep-orange); }
 @media (min-width: 640px) { .aba-title { font-size: 3rem; } }
-.aba-lead { position: relative; margin: 1.25rem auto 0; max-width: 42rem; text-align: center; font-size: 1.125rem; line-height: 1.6; color: var(--text-brown); }
+.aba-lead { position: relative; margin: 1.25rem auto 0; max-width: 68rem; text-align: center; font-size: 0.875rem; line-height: 1.6; color: var(--text-brown); }
 
 .aba-cards { position: relative; margin-top: 3.5rem; display: grid; grid-template-columns: 1fr; gap: 1.75rem; align-items: stretch; }
 @media (min-width: 640px) { .aba-cards { grid-template-columns: repeat(2, 1fr); } }
@@ -894,17 +894,19 @@ body.modalidade-modal-open { overflow: hidden; }
    ========================================================= */
 .unidades-section { background: #fff; padding: 5rem 0; }
 @media (min-width: 768px) { .unidades-section { padding: 7rem 0; } }
-.unidades-grid { margin-top: 2.5rem; display: grid; gap: 1.5rem; }
+.unidades-grid { margin-top: 2.5rem; display: grid; gap: 1.5rem; align-items: stretch; }
 @media (min-width: 1024px) { .unidades-grid { grid-template-columns: repeat(2, 1fr); } }
-.unidade-card { overflow: hidden; border-radius: 1.75rem; border: 1px solid rgba(11,34,57,0.1); }
-.unidade-card iframe { height: 14rem; width: 100%; }
-.unidade-body { padding: 1.75rem; }
+.unidades-grid > .reveal { height: 100%; }
+.unidade-card { height: 100%; display: flex; flex-direction: column; overflow: hidden; border-radius: 1.75rem; border: 1px solid rgba(11,34,57,0.1); }
+.unidade-card iframe { flex-shrink: 0; height: 14rem; width: 100%; }
+.unidade-body { flex: 1; display: flex; flex-direction: column; padding: 1.75rem; }
 .unidade-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--blue); }
 .unidade-address { margin-top: 0.75rem; display: flex; gap: 0.5rem; color: var(--text-slate-2); }
 .unidade-address .icon { margin-top: 0.2rem; color: var(--orange); }
 .unidade-phone { margin-top: 0.5rem; display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--navy); }
 .unidade-phone .icon { color: var(--green); }
-.unidade-body .btn { margin-top: 1.25rem; }
+.unidade-body .btn { margin-top: auto; align-self: flex-start; }
+.unidade-phone { margin-bottom: 1.25rem; }
 
 /* =========================================================
    Trabalhe conosco
