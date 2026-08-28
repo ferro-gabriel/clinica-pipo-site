@@ -25,12 +25,13 @@ jobs:
       - name: Gerar páginas do blog
         run: npm run build:blog
 
-      - name: Cache-busting do CSS/JS (evita CDN servindo versão antiga)
+      - name: Cache-busting do CSS/JS/fotos de modalidades (evita CDN servindo versão antiga)
         run: |
           v="${GITHUB_SHA:0:8}"
           find . -maxdepth 1 -name "*.html" -print0 | xargs -0 sed -i \
             -e "s#href=\"css/styles\.css\"#href=\"css/styles.css?v=${v}\"#g" \
-            -e "s#src=\"js/script\.js\"#src=\"js/script.js?v=${v}\"#g"
+            -e "s#src=\"js/script\.js\"#src=\"js/script.js?v=${v}\"#g" \
+            -e "s#src=\"assets/modalidades/\([a-z-]*\.jpg\)\"#src=\"assets/modalidades/\1?v=${v}\"#g"
 
       - name: Publicar na Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
