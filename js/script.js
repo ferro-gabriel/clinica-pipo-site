@@ -166,8 +166,8 @@ const MODALIDADES_DATA = {
     color: '#e8368f',
     icon: '#icon-brain',
     indicado: 'Desenvolvimento de habilidades emocionais, comportamentais e sociais, trabalhando autorregulação, interação, flexibilidade, manejo de comportamentos e habilidades adaptativas.',
-    description: 'Foca no comportamento e na regulação emocional, desenvolvendo habilidades sociais em contextos reais de convívio.',
-    trabalhamos: ['Regulação emocional e manejo de crises', 'Habilidades sociais e brincar com pares', 'Redução de comportamentos desafiadores', 'Fortalecimento da autoestima'],
+    description: 'Atua no comportamento e na regulação emocional, desenvolvendo habilidades sociais em contextos reais de convívio.',
+    trabalhamos: ['Regulação emocional e manejo de crises', 'Habilidades sociais e brincar com pares', 'Redução de comportamentos desafiadores', 'Fortalecimento do cognitivo e memória processual'],
     abordagens: ['ABA', 'Denver', 'TEACCH', 'TCC', 'Musicoterapia', 'Neuropsicologia'],
   },
   psicoped: {
