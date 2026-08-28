@@ -159,7 +159,7 @@ const MODALIDADES_DATA = {
     indicado: 'Pessoas com dificuldades sensoriais, motoras ou de independência nas rotinas.',
     description: 'Atua no processamento sensorial e na coordenação motora fina, promovendo autonomia nas atividades do dia a dia.',
     trabalhamos: ['Processamento e integração sensorial', 'Coordenação motora fina', 'Atividades de vida diária (vestir-se, higiene)', 'Regulação para brincar e aprender'],
-    abordagens: ['ABA', 'Integração Sensorial (Ayres)'],
+    abordagens: ['ABA', 'Integração Sensorial em Ayres', 'Bobath', 'Denver', 'Seletividade Alimentar', 'TEACCH', 'PECS'],
   },
   psico: {
     name: 'Psicologia',
