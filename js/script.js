@@ -168,7 +168,7 @@ const MODALIDADES_DATA = {
     indicado: 'Pessoas com desafios de comportamento, regulação emocional ou interação social.',
     description: 'Foca no comportamento e na regulação emocional, desenvolvendo habilidades sociais em contextos reais de convívio.',
     trabalhamos: ['Regulação emocional e manejo de crises', 'Habilidades sociais e brincar com pares', 'Redução de comportamentos desafiadores', 'Fortalecimento da autoestima'],
-    abordagens: ['ABA', 'TCC'],
+    abordagens: ['ABA', 'Denver', 'TEACCH', 'TCC', 'Musicoterapia', 'Neuropsicologia'],
   },
   psicoped: {
     name: 'Psicopedagogia',
