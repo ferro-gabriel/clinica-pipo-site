@@ -229,7 +229,6 @@ function setupModalidadesModal() {
   const iconUse = overlay.querySelector('.modalidade-modal-icon use');
   const titleEl = overlay.querySelector('.modalidade-modal-title');
   const indicadoEl = overlay.querySelector('.modalidade-modal-indicado');
-  const descEl = overlay.querySelector('.modalidade-modal-desc');
   const listEl = overlay.querySelector('.modalidade-modal-list');
   const tagsEl = overlay.querySelector('.modalidade-modal-tags');
   const headerEl = overlay.querySelector('.modalidade-modal-header');
@@ -248,7 +247,6 @@ function setupModalidadesModal() {
     iconUse.setAttribute('href', data.icon);
     titleEl.textContent = data.name;
     indicadoEl.textContent = data.indicado;
-    descEl.textContent = data.description;
 
     listEl.innerHTML = '';
     data.trabalhamos.forEach((item) => {
