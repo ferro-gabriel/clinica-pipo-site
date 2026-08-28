@@ -75,7 +75,7 @@ iframe { border: 0; }
 @media (min-width: 640px) { .section-title { font-size: 3rem; } }
 
 .section-desc { margin-top: 1.25rem; max-width: 32rem; font-size: 1.125rem; color: var(--text-slate); }
-.section-desc-center { max-width: 42rem; margin-left: auto; margin-right: auto; text-align: center; }
+.section-desc-center { max-width: 54rem; margin-left: auto; margin-right: auto; text-align: center; }
 
 .eyebrow { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.25em; }
 .eyebrow-orange { color: var(--orange); }

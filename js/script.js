@@ -195,7 +195,7 @@ const MODALIDADES_DATA = {
     indicado: 'Pessoas com dificuldade de comunicação verbal ou expressão emocional.',
     description: 'Usa ritmo, som e música como ponte de comunicação não-verbal e expressão emocional em um ambiente lúdico e seguro.',
     trabalhamos: ['Comunicação por ritmo e som', 'Expressão e regulação emocional', 'Atenção compartilhada', 'Interação e vínculo terapêutico'],
-    abordagens: ['Musicoterapia Improvisacional'],
+    abordagens: ['Musicoterapia', 'ABA'],
   },
   fisio: {
     name: 'Fisioterapia',
