@@ -642,8 +642,8 @@ body.is-menu-open .mobile-menu-overlay {
 .pergunta-q { font-family: var(--font-display); margin-top: 1rem; font-size: 1.25rem; font-weight: 700; color: var(--navy); }
 .pergunta-a { margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.6; color: var(--text-slate-2); }
 
-.cuidado-cta-wrap { position: relative; margin-top: 3.5rem; text-align: center; }
-.cuidado-cta-label { font-family: var(--font-display); font-weight: 700; font-size: 1.125rem; color: var(--navy); max-width: 42rem; margin: 0 auto 1rem; }
+.cuidado-cta-wrap { position: relative; margin-top: 0.5rem; text-align: center; }
+.cuidado-cta-label { font-family: var(--font-display); font-weight: 100; font-size: 1.125rem; color: var(--navy); max-width: 70rem; margin: 0 auto 1rem; }
 .cuidado-cta-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem; }
 
 /* =========================================================
