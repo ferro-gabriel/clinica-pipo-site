@@ -673,12 +673,12 @@ body.is-menu-open .mobile-menu-overlay {
 
 .avaliacoes-grid { position: relative; margin-top: 2.5rem; display: grid; gap: 1rem; border-radius: 2rem; background: var(--blue); padding: 1.5rem; }
 @media (min-width: 640px) { .avaliacoes-grid { grid-template-columns: repeat(2, 1fr); padding: 2.5rem; } }
-.avaliacao-card { display: block; width: 100%; border: none; font: inherit; text-align: left; cursor: pointer; border-radius: 1.25rem; background: #eaf6ff; padding: 1.75rem; transition: transform 0.2s ease; box-shadow: 0 20px 40px -28px rgba(1,20,40,0.5); }
+.avaliacao-card { display: block; width: 100%; border: none; font: inherit; text-align: left; cursor: pointer; border-radius: 1.25rem; background: #58b7fd; padding: 1.75rem; transition: transform 0.2s ease; box-shadow: 0 20px 40px -28px rgba(1,20,40,0.5); }
 .avaliacao-card:hover { transform: translateY(-4px); }
 .avaliacao-header { display: flex; align-items: center; gap: 1rem; }
 .avaliacao-icon { display: inline-flex; flex-shrink: 0; height: 3rem; width: 3rem; align-items: center; justify-content: center; border-radius: 0.85rem; color: #fff; }
-.avaliacao-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--navy); }
-.avaliacao-desc { margin-top: 1rem; color: var(--text-slate-2); }
+.avaliacao-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: #fff; }
+.avaliacao-desc { margin-top: 1rem; color: #fff; }
 
 /* =========================================================
    Modalidades (grade com modal de detalhes)
