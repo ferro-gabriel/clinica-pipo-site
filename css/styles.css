@@ -635,6 +635,8 @@ body.is-menu-open .mobile-menu-overlay {
 .pergunta-a { margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.6; color: var(--text-slate-2); }
 
 .cuidado-cta-wrap { position: relative; margin-top: 3.5rem; text-align: center; }
+.cuidado-cta-label { font-family: var(--font-display); font-weight: 700; font-size: 1.125rem; color: var(--navy); margin: 0 0 1rem; }
+.cuidado-cta-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem; }
 
 /* =========================================================
    Multidisciplinar
@@ -659,13 +661,14 @@ body.is-menu-open .mobile-menu-overlay {
 
 .multi-cta-wrap { position: relative; margin-top: 2.5rem; text-align: center; }
 
-.avaliacoes-grid { position: relative; margin-top: 2.5rem; display: grid; gap: 1rem; border-radius: 2rem; background: var(--blue); padding: 1.5rem; }
-@media (min-width: 640px) { .avaliacoes-grid { grid-template-columns: repeat(2, 1fr); padding: 2.5rem; } }
-.avaliacao-card { display: block; width: 100%; border: none; font: inherit; text-align: left; cursor: pointer; border-radius: 1rem; background: rgba(255,255,255,0.15); padding: 1.5rem; color: #fff; transition: transform 0.2s ease; }
+.avaliacoes-grid { position: relative; margin-top: 2.5rem; display: grid; gap: 1.5rem; }
+@media (min-width: 640px) { .avaliacoes-grid { grid-template-columns: repeat(2, 1fr); } }
+.avaliacao-card { display: block; width: 100%; border: none; font: inherit; text-align: left; cursor: pointer; border-radius: 1.5rem; padding: 1.75rem; transition: transform 0.2s ease; }
 .avaliacao-card:hover { transform: translateY(-4px); }
-.avaliacao-icon { display: inline-flex; height: 3rem; width: 3rem; align-items: center; justify-content: center; border-radius: 0.85rem; background: rgba(255,255,255,0.22); color: #fff; }
-.avaliacao-title { font-family: var(--font-display); margin-top: 1rem; font-size: 1.5rem; font-weight: 700; color: #fff; }
-.avaliacao-desc { margin-top: 0.5rem; color: rgba(255,255,255,0.85); }
+.avaliacao-header { display: flex; align-items: center; gap: 1rem; }
+.avaliacao-icon { display: inline-flex; flex-shrink: 0; height: 3rem; width: 3rem; align-items: center; justify-content: center; border-radius: 0.85rem; color: #fff; }
+.avaliacao-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--navy); }
+.avaliacao-desc { margin-top: 1rem; color: var(--text-slate-2); }
 
 /* =========================================================
    Modalidades (grade com modal de detalhes)
