@@ -461,9 +461,10 @@ body.is-menu-open .mobile-menu-overlay {
   .hero {
     grid-template-columns: 1.15fr 0.9fr;
     /* ESPAÇAMENTO NO COMPUTADOR: reduzido para que o card dos planos já
-       apareça na primeira tela, sem precisar rolar a página. */
-    padding-top: 6rem;
-    padding-bottom: 1.25rem;
+       apareça na primeira tela, sem precisar rolar a página, mas com uma
+       distribuição mais equilibrada entre topo e base do que antes. */
+    padding-top: 5.5rem;
+    padding-bottom: 2.5rem;
   }
 }
 
@@ -518,7 +519,13 @@ body.is-menu-open .mobile-menu-overlay {
   box-shadow: 0 30px 60px -25px rgba(1,155,239,0.55);
 }
 @media (min-width: 640px) { .hero-media-img { aspect-ratio: 5 / 4; } }
-@media (min-width: 1024px) { .hero-media-img { aspect-ratio: 3 / 2; max-height: 22rem; } }
+@media (min-width: 1024px) {
+  /* A partir daqui a foto acompanha a altura da coluna de texto ao lado,
+     em vez de um aspect-ratio fixo, para não sobrar espaço em branco. */
+  .hero-media-wrap { align-self: stretch; }
+  .hero-media { height: 100%; }
+  .hero-media-img { height: 100%; aspect-ratio: auto; }
+}
 .hero-puzzle-decor {
   position: absolute;
   z-index: 0;
