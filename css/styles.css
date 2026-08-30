@@ -144,8 +144,8 @@ iframe { border: 0; }
   align-items: center;
 
   min-height: 5rem; /* Aumentado para dar o respiro extra no topo/base */
-  /* O cálculo abaixo alinha perfeitamente com a max-width de 90rem do hero */
-  padding: 1rem max(1.25rem, calc((100vw - 90rem) / 2 + 1.25rem));
+  /* O cálculo abaixo alinha perfeitamente com a max-width de 80rem do hero */
+  padding: 1rem max(1.25rem, calc((100vw - 80rem) / 2 + 1.25rem));
 
   background: rgba(255, 255, 255, 0.97);
 
@@ -161,8 +161,8 @@ iframe { border: 0; }
 /* Regra para garantir o alinhamento exato lateral no desktop (onde o hero usa 2.5rem de padding) */
 @media (min-width: 768px) {
   .nav {
-    padding-left: max(2.5rem, calc((100vw - 90rem) / 2 + 2.5rem));
-    padding-right: max(2.5rem, calc((100vw - 90rem) / 2 + 2.5rem));
+    padding-left: max(2.5rem, calc((100vw - 80rem) / 2 + 2.5rem));
+    padding-right: max(2.5rem, calc((100vw - 80rem) / 2 + 2.5rem));
   }
 }
 
@@ -441,7 +441,7 @@ body.is-menu-open .mobile-menu-overlay {
 
 /* Ajuste de espaço e layout da seção inicial (Hero) */
 .hero {
-  max-width: 90rem;
+  max-width: 80rem;
   margin: 0 auto;
   display: grid;
   gap: 2rem;
@@ -462,11 +462,10 @@ body.is-menu-open .mobile-menu-overlay {
     grid-template-columns: 1.15fr 0.9fr;
     /* Colunas mais próximas, com menos espaço em branco entre o texto e a foto. */
     gap: 1.25rem;
-    /* ESPAÇAMENTO NO COMPUTADOR: reduzido para que o card dos planos já
-       apareça na primeira tela, sem precisar rolar a página, mas com uma
-       distribuição mais equilibrada entre topo e base do que antes. */
-    padding-top: 5.75rem;
-    padding-bottom: 2.75rem;
+    /* ESPAÇAMENTO NO COMPUTADOR: margens maiores para a seção respirar e
+       garantir que a foto/decoração não fiquem coladas no menu fixo. */
+    padding-top: 7rem;
+    padding-bottom: 4rem;
   }
 }
 
@@ -536,6 +535,7 @@ body.is-menu-open .mobile-menu-overlay {
   width: 30%;
   min-width: 4.5rem;
   max-width: 9rem;
+  aspect-ratio: 1 / 1;
 }
 @media (min-width: 768px) { .hero-puzzle-decor { left: -1rem; top: -1rem; width: 20%; min-width: 3rem; max-width: 6rem; } }
 
@@ -543,7 +543,7 @@ body.is-menu-open .mobile-menu-overlay {
   background: var(--blue);
 }
 .hero-banner-inner {
-  max-width: 90rem;
+  max-width: 80rem;
   margin: 0 auto;
   display: grid;
   gap: 1.5rem;
