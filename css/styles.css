@@ -523,11 +523,11 @@ body.is-menu-open .mobile-menu-overlay {
 }
 @media (min-width: 640px) { .hero-media-img { aspect-ratio: 5 / 4; } }
 @media (min-width: 1024px) {
-  /* A partir daqui a foto acompanha a altura da coluna de texto ao lado,
-     em vez de um aspect-ratio fixo, para não sobrar espaço em branco. */
-  .hero-media-wrap { align-self: stretch; }
-  .hero-media { height: 96%; }
-  .hero-media-img { height: calc(90% - 3px); aspect-ratio: auto; }
+  /* A foto (com a decoração) fica centralizada verticalmente no espaço
+     disponível da coluna, em vez de colada no topo. */
+  .hero-media-wrap { align-self: stretch; display: flex; align-items: center; }
+  .hero-media { width: 100%; }
+  .hero-media-img { width: 100%; height: auto; aspect-ratio: 3 / 2; }
 }
 .hero-puzzle-decor {
   position: absolute;
@@ -545,20 +545,28 @@ body.is-menu-open .mobile-menu-overlay {
   background: var(--blue);
 }
 .hero-banner-inner {
-  /* Um pouco mais larga que o hero para caber o texto e os dois botões
-     numa linha só em telas grandes, sem quebrar. */
-  max-width: 89rem;
+  /* Mesma largura fixa do hero, para alinhar as bordas. */
+  max-width: 1250px;
   margin: 0 auto;
-  display: grid;
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
   padding: 2rem 1.25rem;
   text-align: center;
 }
-@media (min-width: 768px) { .hero-banner-inner { grid-template-columns: 1.2fr 1fr; padding: 1.5rem 2.5rem; text-align: left; } }
-.hero-banner-text { font-family: var(--font-display); font-weight: 800; font-size: 28px; line-height: normal; color: #fff; }
+@media (min-width: 768px) {
+  .hero-banner-inner { flex-direction: row; flex-wrap: wrap; justify-content: space-between; padding: 1.5rem 2.5rem; text-align: left; }
+}
+@media (min-width: 1200px) {
+  /* Espaço suficiente para texto + os dois botões numa única linha, sem cortar nada. */
+  .hero-banner-inner { flex-wrap: nowrap; }
+}
+.hero-banner-text { flex-shrink: 0; font-family: var(--font-display); font-weight: 800; font-size: 28px; line-height: normal; color: #fff; }
 .hero-banner-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
-@media (min-width: 768px) { .hero-banner-actions { justify-content: flex-end; } }
+@media (min-width: 768px) { .hero-banner-actions { flex-shrink: 0; flex-wrap: nowrap; justify-content: flex-end; } }
 
 /* =========================================================
    Prova social (números)
