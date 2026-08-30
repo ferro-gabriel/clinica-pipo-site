@@ -543,7 +543,9 @@ body.is-menu-open .mobile-menu-overlay {
   background: var(--blue);
 }
 .hero-banner-inner {
-  max-width: 80rem;
+  /* Um pouco mais larga que o hero para caber o texto e os dois botões
+     numa linha só em telas grandes, sem quebrar. */
+  max-width: 89rem;
   margin: 0 auto;
   display: grid;
   gap: 1.5rem;
