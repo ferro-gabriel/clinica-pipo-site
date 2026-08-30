@@ -144,8 +144,8 @@ iframe { border: 0; }
   align-items: center;
 
   min-height: 5rem; /* Aumentado para dar o respiro extra no topo/base */
-  /* O cálculo abaixo alinha perfeitamente com a max-width de 89rem da faixa azul */
-  padding: 1rem max(1.25rem, calc((100vw - 89rem) / 2 + 1.25rem));
+  /* Realinhamento parcial: mais próximo do hero (1250px) sem descolar tanto da faixa azul (89rem) */
+  padding: 1rem max(1.25rem, calc((100vw - 84rem) / 2 + 1.25rem));
 
   background: rgba(255, 255, 255, 0.97);
 
@@ -161,8 +161,8 @@ iframe { border: 0; }
 /* Regra para garantir o alinhamento exato lateral no desktop (onde o hero usa 2.5rem de padding) */
 @media (min-width: 768px) {
   .nav {
-    padding-left: max(2.5rem, calc((100vw - 89rem) / 2 + 2.5rem));
-    padding-right: max(2.5rem, calc((100vw - 89rem) / 2 + 2.5rem));
+    padding-left: max(2.5rem, calc((100vw - 84rem) / 2 + 2.5rem));
+    padding-right: max(2.5rem, calc((100vw - 84rem) / 2 + 2.5rem));
   }
 }
 
