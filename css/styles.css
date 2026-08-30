@@ -466,7 +466,7 @@ body.is-menu-open .mobile-menu-overlay {
     gap: 2.5rem;
     /* ESPAÇAMENTO NO COMPUTADOR: margens maiores para a seção respirar e
        garantir que a foto/decoração não fiquem coladas no menu fixo. */
-    padding-top: 120px;
+    padding-top: 100px;
     padding-bottom: 2.125rem;
   }
 }
@@ -519,15 +519,15 @@ body.is-menu-open .mobile-menu-overlay {
   aspect-ratio: 4 / 5;
   border-radius: 2.5rem;
   object-fit: cover;
-  box-shadow: 0 30px 60px -25px rgba(1,155,239,0.55);
+  box-shadow: 0 15px 60px -25px rgba(1,155,239,0.55);
 }
 @media (min-width: 640px) { .hero-media-img { aspect-ratio: 5 / 4; } }
 @media (min-width: 1024px) {
   /* A partir daqui a foto acompanha a altura da coluna de texto ao lado,
      em vez de um aspect-ratio fixo, para não sobrar espaço em branco. */
   .hero-media-wrap { align-self: stretch; }
-  .hero-media { height: 100%; }
-  .hero-media-img { height: calc(100% - 3px); aspect-ratio: auto; }
+  .hero-media { height: 96%; }
+  .hero-media-img { height: calc(90% - 3px); aspect-ratio: auto; }
 }
 .hero-puzzle-decor {
   position: absolute;
@@ -539,7 +539,7 @@ body.is-menu-open .mobile-menu-overlay {
   max-width: 9rem;
   aspect-ratio: 1 / 1;
 }
-@media (min-width: 768px) { .hero-puzzle-decor { left: -1rem; top: -1rem; width: 20%; min-width: 3rem; max-width: 6rem; } }
+@media (min-width: 768px) { .hero-puzzle-decor { left: -28px; top: -13px; width: 20%; min-width: 3rem; max-width: 6rem; } }
 
 .hero-banner {
   background: var(--blue);
