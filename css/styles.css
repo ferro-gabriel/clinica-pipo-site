@@ -661,9 +661,9 @@ body.is-menu-open .mobile-menu-overlay {
 
 .multi-cta-wrap { position: relative; margin-top: 2.5rem; text-align: center; }
 
-.avaliacoes-grid { position: relative; margin-top: 2.5rem; display: grid; gap: 1.5rem; }
-@media (min-width: 640px) { .avaliacoes-grid { grid-template-columns: repeat(2, 1fr); } }
-.avaliacao-card { display: block; width: 100%; border: none; font: inherit; text-align: left; cursor: pointer; border-radius: 1.5rem; padding: 1.75rem; transition: transform 0.2s ease; }
+.avaliacoes-grid { position: relative; margin-top: 2.5rem; display: grid; gap: 1rem; border-radius: 2rem; background: var(--blue); padding: 1.5rem; }
+@media (min-width: 640px) { .avaliacoes-grid { grid-template-columns: repeat(2, 1fr); padding: 2.5rem; } }
+.avaliacao-card { display: block; width: 100%; border: none; font: inherit; text-align: left; cursor: pointer; border-radius: 1.25rem; background: #fff; padding: 1.75rem; transition: transform 0.2s ease; box-shadow: 0 20px 40px -28px rgba(1,20,40,0.5); }
 .avaliacao-card:hover { transform: translateY(-4px); }
 .avaliacao-header { display: flex; align-items: center; gap: 1rem; }
 .avaliacao-icon { display: inline-flex; flex-shrink: 0; height: 3rem; width: 3rem; align-items: center; justify-content: center; border-radius: 0.85rem; color: #fff; }
