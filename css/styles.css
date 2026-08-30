@@ -527,7 +527,7 @@ body.is-menu-open .mobile-menu-overlay {
      disponível da coluna, em vez de colada no topo. */
   .hero-media-wrap { align-self: stretch; display: flex; align-items: center; }
   .hero-media { width: 100%; }
-  .hero-media-img { width: 100%; height: auto; aspect-ratio: 3 / 2; }
+  .hero-media-img { width: 100%; height: auto; aspect-ratio: 5 / 4; }
 }
 .hero-puzzle-decor {
   position: absolute;
