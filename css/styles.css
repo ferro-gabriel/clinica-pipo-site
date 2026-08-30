@@ -466,8 +466,8 @@ body.is-menu-open .mobile-menu-overlay {
     gap: 2.5rem;
     /* ESPAÇAMENTO NO COMPUTADOR: margens maiores para a seção respirar e
        garantir que a foto/decoração não fiquem coladas no menu fixo. */
-    padding-top: 100px;
-    padding-bottom: 2.125rem;
+    padding-top: 90px;
+    padding-bottom: 40px;
   }
 }
 
