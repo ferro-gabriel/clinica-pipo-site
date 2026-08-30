@@ -593,7 +593,7 @@ body.is-menu-open .mobile-menu-overlay {
    Orientação inicial
    ========================================================= */
 .orientacao-section { position: relative; overflow: hidden; background: #fff; padding: 5rem 0; }
-@media (min-width: 768px) { .orientacao-section { padding: 7rem 0; } }
+@media (min-width: 768px) { .orientacao-section { padding: 50px 0; } }
 .orientacao-decor-2 { position: absolute; right: 2.5rem; bottom: 2.5rem; height: 8rem; width: 8rem; border-radius: 1.5rem; background: rgba(255,204,0,0.4); transform: rotate(12deg); pointer-events: none; }
 .orientacao-grid { position: relative; max-width: 80rem; margin: 0 auto; padding: 0 1.25rem; display: grid; gap: 3.5rem; }
 @media (min-width: 768px) { .orientacao-grid { padding: 0 2.5rem; } }
@@ -642,7 +642,7 @@ body.is-menu-open .mobile-menu-overlay {
    Multidisciplinar
    ========================================================= */
 .multi-section { position: relative; overflow: hidden; background: var(--navy); padding: 5rem 0 2.5rem; }
-@media (min-width: 768px) { .multi-section { padding: 7rem 0 3rem; } }
+@media (min-width: 768px) { .multi-section { padding: 4rem 0 3rem; } }
 .multi-dots { position: absolute; inset: 0; color: rgba(255,255,255,0.1); pointer-events: none; }
 .multi-blur-decor { position: absolute; left: -5rem; top: 10rem; height: 16rem; width: 16rem; border-radius: 999px; background: rgba(1,155,239,0.3); filter: blur(40px); pointer-events: none; }
 
@@ -674,7 +674,7 @@ body.is-menu-open .mobile-menu-overlay {
    Modalidades (grade com modal de detalhes)
    ========================================================= */
 .modalidades-section { position: relative; overflow: hidden; background: var(--navy); padding: 2.5rem 0 5rem; }
-@media (min-width: 768px) { .modalidades-section { padding: 3rem 0 7rem; } }
+@media (min-width: 768px) { .modalidades-section { padding: 1rem 0 7rem; } }
 .modalidades-dots { position: absolute; inset: 0; color: rgba(255,255,255,0.08); pointer-events: none; }
 .modalidades-glow { position: absolute; right: -6rem; top: -6rem; height: 20rem; width: 20rem; border-radius: 999px; background: radial-gradient(circle, rgba(1,155,239,0.25), transparent 70%); pointer-events: none; }
 
