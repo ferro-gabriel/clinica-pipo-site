@@ -463,7 +463,7 @@ body.is-menu-open .mobile-menu-overlay {
        "Clínica de Autismo Pipo" no título. */
     grid-template-columns: 1fr 1fr;
     /* Colunas mais próximas, com menos espaço em branco entre o texto e a foto. */
-    gap: 1.25rem;
+    gap: 1.75rem;
     /* ESPAÇAMENTO NO COMPUTADOR: margens maiores para a seção respirar e
        garantir que a foto/decoração não fiquem coladas no menu fixo. */
     padding-top: 7rem;
