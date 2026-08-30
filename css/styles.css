@@ -460,11 +460,13 @@ body.is-menu-open .mobile-menu-overlay {
 @media (min-width: 1024px) {
   .hero {
     grid-template-columns: 1.15fr 0.9fr;
+    /* Colunas mais próximas, com menos espaço em branco entre o texto e a foto. */
+    gap: 1.25rem;
     /* ESPAÇAMENTO NO COMPUTADOR: reduzido para que o card dos planos já
        apareça na primeira tela, sem precisar rolar a página, mas com uma
        distribuição mais equilibrada entre topo e base do que antes. */
-    padding-top: 5.5rem;
-    padding-bottom: 2.5rem;
+    padding-top: 5.75rem;
+    padding-bottom: 2.75rem;
   }
 }
 
@@ -524,7 +526,7 @@ body.is-menu-open .mobile-menu-overlay {
      em vez de um aspect-ratio fixo, para não sobrar espaço em branco. */
   .hero-media-wrap { align-self: stretch; }
   .hero-media { height: 100%; }
-  .hero-media-img { height: 100%; aspect-ratio: auto; }
+  .hero-media-img { height: calc(100% - 3px); aspect-ratio: auto; }
 }
 .hero-puzzle-decor {
   position: absolute;
