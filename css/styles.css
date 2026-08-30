@@ -564,7 +564,7 @@ body.is-menu-open .mobile-menu-overlay {
    Prova social (números)
    ========================================================= */
 .stats-section { position: relative; overflow: hidden; background: var(--bg-yellow-light); padding: 2rem 0 2.5rem; }
-@media (min-width: 1024px) { .stats-section { padding: 1.25rem 0 1.5rem; } }
+@media (min-width: 1024px) { .stats-section { padding: 20px 0 20px; } }
 /* Mesma largura da faixa azul do hero, para alinhar as duas seções. */
 .stats-section .section-inner { max-width: 89rem; }
 .decor-puzzle { object-fit: contain; filter: drop-shadow(0 10px 18px rgba(11,34,57,0.18)); }
