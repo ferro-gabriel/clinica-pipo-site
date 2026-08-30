@@ -441,7 +441,7 @@ body.is-menu-open .mobile-menu-overlay {
 
 /* Ajuste de espaço e layout da seção inicial (Hero) */
 .hero {
-  max-width: 80rem;
+  max-width: 1250px;
   margin: 0 auto;
   display: grid;
   gap: 2rem;
@@ -453,7 +453,7 @@ body.is-menu-open .mobile-menu-overlay {
 @media (min-width: 768px) {
   .hero {
     /* Espaçamento em tablets: 8rem no topo e embaixo */
-    padding: 8rem 0.5rem 8rem;
+    padding: 8rem 1.5rem 8rem;
   }
 }
 
@@ -467,7 +467,7 @@ body.is-menu-open .mobile-menu-overlay {
     /* ESPAÇAMENTO NO COMPUTADOR: margens maiores para a seção respirar e
        garantir que a foto/decoração não fiquem coladas no menu fixo. */
     padding-top: 120px;
-    padding-bottom: 3.125rem;
+    padding-bottom: 2.125rem;
   }
 }
 
