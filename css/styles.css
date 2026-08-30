@@ -546,6 +546,7 @@ body.is-menu-open .mobile-menu-overlay {
 .hero-banner-text { font-family: var(--font-display); font-weight: 800; font-size: 28px; line-height: normal; color: #fff; }
 .hero-banner-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
 @media (min-width: 768px) { .hero-banner-actions { justify-content: flex-end; } }
+.hero-banner-note { grid-column: 1 / -1; margin: 0; text-align: center; font-weight: 700; font-size: 0.9375rem; color: rgba(255,255,255,0.9); }
 
 /* =========================================================
    Prova social (números)
@@ -849,38 +850,71 @@ body.modalidade-modal-open { overflow: hidden; }
 /* =========================================================
    Convênios
    ========================================================= */
-.convenios-section { background: #fff; padding: 5rem 0; }
-@media (min-width: 768px) { .convenios-section { padding: 6rem 0; } }
-.convenios-desc { margin-top: 0.75rem; text-align: center; color: var(--text-slate-3); }
-.convenios-scroll {
-  margin-top: 3rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.6rem;
-}
-@media (min-width: 640px) { .convenios-scroll { grid-template-columns: repeat(3, 1fr); gap: 0.85rem; } }
-@media (min-width: 1024px) { .convenios-scroll { grid-template-columns: repeat(5, 1fr); } }
-.convenio-item {
-  display: flex;
-  min-height: 72px;
-  align-items: center;
-  gap: 0.75rem;
-  border-radius: 1rem;
-  border: 1px solid rgba(11,34,57,0.08);
-  background: #fff;
-  padding: 0.75rem;
-  box-shadow: 0 8px 24px -18px rgba(11,34,57,0.5);
-}
-@media (max-width: 639px) {
-  .convenio-item { min-height: 60px; gap: 0.5rem; padding: 0.6rem; }
-  .convenio-logo { height: 2.25rem; width: 2.25rem; }
-  .convenio-name { font-size: 0.8rem; }
-}
 .convenio-logo { display: flex; height: 2.75rem; width: 2.75rem; flex-shrink: 0; align-items: center; justify-content: center; overflow: hidden; border-radius: 0.65rem; background: #fff; border: 1px solid rgba(11,34,57,0.08); }
 .convenio-logo img { height: 100%; width: 100%; object-fit: contain; padding: 0.2rem; }
 .convenio-logo-fallback { font-family: var(--font-display); font-size: 0.7rem; font-weight: 800; color: #fff; text-align: center; line-height: 1; border: none; }
 .convenio-name { font-size: 0.875rem; font-weight: 700; line-height: 1.25; color: var(--navy); }
-.convenios-hint { margin-top: 2.5rem; text-align: center; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(1,155,239,0.7); }
+
+/* Carrossel de planos e convênios (logo abaixo da faixa azul do hero) */
+.convenios-carousel-section { position: relative; background: #fff; padding: 1.5rem 0; display: flex; align-items: center; box-sizing: border-box; }
+.convenios-carousel-wrap { position: relative; width: 100%; max-width: 90rem; margin: 0 auto; padding: 0 3.25rem; }
+.convenios-track {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0.25rem 0.25rem;
+}
+.convenios-track::-webkit-scrollbar { display: none; }
+.convenios-track .convenio-item {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 6.5rem;
+}
+.convenios-track .convenio-logo {
+  height: 3.75rem;
+  width: 6.5rem;
+  border-radius: 0.85rem;
+  box-shadow: 0 10px 22px -14px rgba(11,34,57,0.35);
+}
+.convenios-track .convenio-logo img { padding: 0.5rem; }
+.convenios-track .convenio-name { font-size: 0.75rem; text-align: center; }
+.convenios-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.75rem;
+  width: 2.75rem;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(11,34,57,0.12);
+  color: var(--navy);
+  box-shadow: 0 10px 24px -12px rgba(11,34,57,0.4);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.convenios-arrow:hover { transform: translateY(-50%) scale(1.06); box-shadow: 0 14px 28px -12px rgba(11,34,57,0.5); }
+.convenios-arrow-prev { left: 0.25rem; }
+.convenios-arrow-next { right: 0.25rem; }
+@media (max-width: 639px) {
+  .convenios-carousel-wrap { padding: 0 2.75rem; }
+  .convenios-arrow { height: 2.25rem; width: 2.25rem; }
+  .convenios-track .convenio-item { width: 5.5rem; }
+  .convenios-track .convenio-logo { height: 3.25rem; width: 5.5rem; }
+}
 
 /* =========================================================
    FAQ

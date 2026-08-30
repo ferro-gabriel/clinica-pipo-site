@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupNavDropdown();
   setupBackToTop();
   setupSmoothScroll();
+  setupConveniosCarousel();
 });
 
 // Deixa a rolagem do mouse mais suave (Lenis). Toque continua com a rolagem
@@ -365,4 +366,45 @@ function setupFaqAccordion() {
       }
     });
   });
+}
+
+// Carrossel de planos e convênios: estático (só move com clique nas setas),
+// e centraliza o plano Bradesco ao carregar a página.
+function setupConveniosCarousel() {
+  const track = document.getElementById('convenios-track');
+  if (!track) return;
+
+  const prevBtn = document.querySelector('.convenios-arrow-prev');
+  const nextBtn = document.querySelector('.convenios-arrow-next');
+
+  function scrollByAmount(direction) {
+    const item = track.querySelector('.convenio-item');
+    const itemWidth = item ? item.getBoundingClientRect().width : 100;
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    const amount = (itemWidth + gap) * 3 * direction;
+    track.scrollBy({ left: amount, behavior: 'smooth' });
+  }
+
+  prevBtn?.addEventListener('click', () => scrollByAmount(-1));
+  nextBtn?.addEventListener('click', () => scrollByAmount(1));
+
+  const section = document.querySelector('.convenios-carousel-section');
+  const heroBanner = document.querySelector('.hero-banner');
+  if (section && heroBanner) {
+    const matchHeroBannerHeight = () => {
+      section.style.minHeight = `${heroBanner.getBoundingClientRect().height}px`;
+    };
+    matchHeroBannerHeight();
+    window.addEventListener('resize', matchHeroBannerHeight);
+  }
+
+  const bradesco = document.getElementById('convenio-bradesco');
+  if (bradesco) {
+    const centerBradesco = () => {
+      const target = bradesco.offsetLeft - track.clientWidth / 2 + bradesco.offsetWidth / 2;
+      track.scrollLeft = Math.max(target, 0);
+    };
+    centerBradesco();
+    window.addEventListener('resize', centerBradesco);
+  }
 }
