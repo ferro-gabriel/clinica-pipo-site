@@ -453,7 +453,7 @@ body.is-menu-open .mobile-menu-overlay {
 @media (min-width: 768px) {
   .hero {
     /* Espaçamento em tablets: 8rem no topo e embaixo */
-    padding: 8rem 2.5rem 8rem;
+    padding: 8rem 0.5rem 8rem;
   }
 }
 
@@ -463,11 +463,11 @@ body.is-menu-open .mobile-menu-overlay {
        "Clínica de Autismo Pipo" no título. */
     grid-template-columns: 1fr 1fr;
     /* Colunas mais próximas, com menos espaço em branco entre o texto e a foto. */
-    gap: 2.25rem;
+    gap: 2.5rem;
     /* ESPAÇAMENTO NO COMPUTADOR: margens maiores para a seção respirar e
        garantir que a foto/decoração não fiquem coladas no menu fixo. */
     padding-top: 8rem;
-    padding-bottom: 5rem;
+    padding-bottom: 3.125rem;
   }
 }
 
