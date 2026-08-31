@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupBackToTop();
   setupSmoothScroll();
   setupConveniosCarousel();
+  setupLeadForm();
 });
 
 // Deixa a rolagem do mouse mais suave (Lenis). Toque continua com a rolagem
@@ -323,6 +324,97 @@ function setupAvaliacaoModals() {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
     });
+  });
+}
+
+// Número de WhatsApp de cada unidade — usado no botão que aparece após o envio do formulário.
+const UNIDADE_WHATSAPP = {
+  Blumenau: '5547999631084',
+  Itapema: '5547991069487',
+};
+
+// Chave de envio do formulário "Consultar meu plano" (Web3Forms — web3forms.com).
+const WEB3FORMS_ACCESS_KEY = '75ca980e-8bbe-4688-9c90-a5c60e9fad6a';
+
+// Popup "Consultar meu plano": envia os dados preenchidos (lead) por e-mail via Web3Forms.
+// Ao confirmar o envio, o formulário some e dá lugar a uma tela de sucesso (ocupando o popup
+// inteiro) com a mensagem de confirmação e o botão de WhatsApp da unidade escolhida.
+function setupLeadForm() {
+  const form = document.getElementById('lead-form');
+  if (!form) return;
+
+  const fieldsEl = document.getElementById('lead-form-fields');
+  const successEl = document.getElementById('lead-success');
+  const unidadeSelect = document.getElementById('lead-unidade');
+  const whatsappBtn = document.getElementById('lead-whatsapp-btn');
+  const submitBtn = document.getElementById('lead-submit-btn');
+  const msgEl = document.getElementById('lead-form-msg');
+  const errorEl = document.getElementById('lead-form-error');
+  const trigger = document.querySelector('[data-open-modal="plano-lead-modal"]');
+
+  // Toda vez que o popup é reaberto, volta a mostrar o formulário em branco
+  // (caso a visita anterior tenha terminado na tela de sucesso).
+  if (trigger) {
+    trigger.addEventListener('click', () => {
+      form.reset();
+      errorEl.textContent = '';
+      fieldsEl.hidden = false;
+      successEl.hidden = true;
+    });
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorEl.textContent = '';
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const dados = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: 'Novo contato pelo site — Consultar meu plano',
+      from_name: 'Site Clínica de Autismo Pipo',
+      nome: document.getElementById('lead-nome').value.trim(),
+      telefone: document.getElementById('lead-telefone').value.trim(),
+      email: document.getElementById('lead-email').value.trim(),
+      plano: document.getElementById('lead-plano').value,
+      unidade: unidadeSelect.value,
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    try {
+      const resp = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(dados),
+      });
+      const result = await resp.json();
+
+      if (result.success) {
+        if (typeof fbq === 'function') fbq('track', 'Lead');
+
+        const numero = UNIDADE_WHATSAPP[dados.unidade];
+        const texto = `Olá! Meu nome é ${dados.nome} e gostaria de consultar meu plano de saúde na unidade de ${dados.unidade}.`;
+        whatsappBtn.href = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+        whatsappBtn.querySelector('span').textContent = `Falar agora no WhatsApp · ${dados.unidade}`;
+
+        msgEl.textContent = 'Recebemos seu contato! Em breve falamos com você — ou, se preferir, já chame a gente pelo WhatsApp abaixo.';
+        form.reset();
+        fieldsEl.hidden = true;
+        successEl.hidden = false;
+      } else {
+        throw new Error(result.message || 'Falha no envio');
+      }
+    } catch (err) {
+      errorEl.textContent = 'Não conseguimos enviar agora. Tente novamente em instantes ou chame direto: (47) 99963-1084 (Blumenau) / (47) 99106-9487 (Itapema).';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar';
+    }
   });
 }
 
