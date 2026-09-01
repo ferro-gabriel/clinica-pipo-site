@@ -644,7 +644,7 @@ body.is-menu-open .mobile-menu-overlay {
 
 .cuidado-cta-wrap { position: relative; margin-top: 0.5rem; text-align: center; }
 .cuidado-cta-label { font-family: var(--font-display); font-weight: 800; font-size: 25px; color: var(--navy); max-width: 20rem; margin: 0 auto 1rem; }
-@media (min-width: 768px) { .cuidado-cta-label { font-size: 28px; max-width: 70rem; } }
+@media (min-width: 768px) { .cuidado-cta-label { font-size: 1.35rem; max-width: 70rem; } }
 .cuidado-cta-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem; }
 /* Faixa de CTA do carrossel de planos: fundo próprio, largura total do site */
 .convenios-carousel-section .cuidado-cta-wrap { align-self: stretch; margin-top: 1.5rem; padding: 2rem 1.25rem; }
@@ -661,7 +661,7 @@ body.is-menu-open .mobile-menu-overlay {
 
 .multi-title { position: relative; font-family: var(--font-display); text-align: center; font-size: 2.25rem; font-weight: 800; color: #fff; }
 @media (min-width: 640px) { .multi-title { font-size: 3.75rem; } }
-.multi-subtitle { position: relative; max-width: 68rem; margin: 1rem auto 0; text-align: center; font-size: 0.9375rem; line-height: 1.6; color: rgba(185,198,214,1); }
+.multi-subtitle { position: relative; max-width: 68rem; margin: 0rem 5rem 0; text-align: center; font-size: 17px; line-height: 1.6; color: rgba(185,198,214,1); }
 
 .especialidades-list { position: relative; margin-top: 3rem; display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
 @media (min-width: 768px) { .especialidades-list { grid-template-columns: repeat(2, 1fr); column-gap: 2.5rem; row-gap: 2rem; } }
