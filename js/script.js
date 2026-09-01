@@ -460,14 +460,61 @@ function setupFaqAccordion() {
   });
 }
 
-// Carrossel de planos e convênios: estático (só move com clique nas setas),
-// e centraliza o plano Bradesco ao carregar a página.
+// Carrossel de planos e convênios: loop infinito (clona o conjunto completo
+// antes e depois do original e reposiciona sem animação ao cruzar as bordas),
+// move com clique nas setas ou arrastando, e centraliza o plano Bradesco ao carregar.
 function setupConveniosCarousel() {
   const track = document.getElementById('convenios-track');
   if (!track) return;
 
   const prevBtn = document.querySelector('.convenios-arrow-prev');
   const nextBtn = document.querySelector('.convenios-arrow-next');
+
+  const originalItems = Array.from(track.children);
+  const cloneItems = () => originalItems.map((el) => {
+    const clone = el.cloneNode(true);
+    clone.removeAttribute('id');
+    clone.setAttribute('aria-hidden', 'true');
+    return clone;
+  });
+
+  const beforeClones = cloneItems();
+  const afterClones = cloneItems();
+  const beforeFrag = document.createDocumentFragment();
+  beforeClones.forEach((el) => beforeFrag.appendChild(el));
+  track.insertBefore(beforeFrag, track.firstChild);
+  const afterFrag = document.createDocumentFragment();
+  afterClones.forEach((el) => afterFrag.appendChild(el));
+  track.appendChild(afterFrag);
+
+  function contentLeft(el) {
+    const trackRect = track.getBoundingClientRect();
+    return el.getBoundingClientRect().left - trackRect.left + track.scrollLeft;
+  }
+
+  function jumpBy(delta) {
+    const prevBehavior = track.style.scrollBehavior;
+    track.style.scrollBehavior = 'auto';
+    track.scrollLeft += delta;
+    requestAnimationFrame(() => { track.style.scrollBehavior = prevBehavior; });
+  }
+
+  let normalizeTimer = null;
+  function normalizeScroll() {
+    const beforeStart = contentLeft(originalItems[0]);
+    const afterStart = contentLeft(afterClones[0]);
+    const setW = afterStart - beforeStart;
+    if (!setW) return;
+    if (track.scrollLeft < beforeStart) {
+      jumpBy(setW);
+    } else if (track.scrollLeft >= afterStart) {
+      jumpBy(-setW);
+    }
+  }
+  track.addEventListener('scroll', () => {
+    clearTimeout(normalizeTimer);
+    normalizeTimer = setTimeout(normalizeScroll, 100);
+  });
 
   function scrollByAmount(direction) {
     const item = track.querySelector('.convenio-item');
