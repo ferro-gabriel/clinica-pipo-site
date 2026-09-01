@@ -67,12 +67,12 @@ iframe { border: 0; }
 .section-title {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 2.25rem;
-  line-height: 1.15;
+  font-size: 24px;
+  line-height: 2.15;
   color: var(--navy);
 }
 .section-title-center { text-align: center; max-width: 48rem; margin: 0 auto; }
-@media (min-width: 640px) { .section-title { font-size: 34px; } }
+@media (min-width: 640px) { .section-title { font-size: 34px; line-height: 1.15; } }
 
 .section-desc { margin-top: 1.25rem; max-width: 32rem; font-size: 1.125rem; color: var(--text-slate); }
 .section-desc-center { max-width: 68rem; margin-left: auto; margin-right: auto; text-align: center; }
@@ -644,7 +644,7 @@ body.is-menu-open .mobile-menu-overlay {
 
 .cuidado-cta-wrap { position: relative; margin-top: 0.5rem; text-align: center; }
 .cuidado-cta-label { font-family: var(--font-display); font-weight: 800; font-size: 25px; color: var(--navy); max-width: 20rem; margin: 0 auto 1rem; }
-@media (min-width: 768px) { .cuidado-cta-label { font-size: 19px; max-width: 70rem; } }
+@media (min-width: 768px) { .cuidado-cta-label { font-size: 28px; max-width: 70rem; } }
 .cuidado-cta-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem; }
 /* Faixa de CTA do carrossel de planos: fundo próprio, largura total do site */
 .convenios-carousel-section .cuidado-cta-wrap { align-self: stretch; margin-top: 1.5rem; padding: 2rem 1.25rem; }
@@ -792,7 +792,7 @@ body.modalidade-modal-open { overflow: hidden; }
 /* =========================================================
    Intervenção ABA
    ========================================================= */
-.aba-section { position: relative; overflow: hidden; background: var(--bg-beige); padding: 5rem 0; }
+.aba-section { position: relative; overflow: hidden; background: var(--bg-beige); padding: 4rem 0; }
 @media (min-width: 768px) { .aba-section { padding: 7rem 0; } }
 .aba-decor-1 { position: absolute; left: 2rem; top: 2.5rem; height: 5rem; width: 5rem; border-radius: 1rem; background: rgba(1,155,239,0.2); transform: rotate(12deg); pointer-events: none; }
 .aba-decor-2 { position: absolute; right: 3rem; top: 30%; height: 4.5rem; width: 4.5rem; opacity: 0.9; pointer-events: none; }
@@ -820,7 +820,7 @@ body.modalidade-modal-open { overflow: hidden; }
 /* =========================================================
    Diferenciais
    ========================================================= */
-.diferenciais-section { position: relative; overflow: hidden; background: var(--bg-beige); padding: 5rem 0; }
+.diferenciais-section { position: relative; overflow: hidden; background: var(--bg-beige); padding: 3rem 0; }
 @media (min-width: 768px) { .diferenciais-section { padding: 7rem 0; } }
 .diferenciais-dots { position: absolute; inset: 0; color: rgba(11,34,57,0.1); pointer-events: none; }
 .diferenciais-inner { position: relative; max-width: 64rem; margin: 0 auto; padding: 0 1.25rem; }
@@ -838,7 +838,7 @@ body.modalidade-modal-open { overflow: hidden; }
 /* =========================================================
    Coordenação clínica
    ========================================================= */
-.coord-section { position: relative; overflow: hidden; background: var(--bg-navy-dark); padding: 5rem 0; }
+.coord-section { position: relative; overflow: hidden; background: var(--bg-navy-dark); padding: 4rem 0; }
 @media (min-width: 768px) { .coord-section { padding: 7rem 0; } }
 .coord-dots { position: absolute; inset: 0; color: rgba(255,255,255,0.08); pointer-events: none; }
 .coord-inner { position: relative; max-width: 48rem; margin: 0 auto; padding: 0 1.25rem; text-align: center; }
@@ -850,7 +850,8 @@ body.modalidade-modal-open { overflow: hidden; }
 .coord-tags { margin-top: 1.75rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
 .coord-tag { border-radius: 999px; background: var(--blue); padding: 0.5rem 1.25rem; font-size: 0.875rem; font-weight: 800; color: #fff; }
 
-.coord-section .eyebrow { font-size: 20px; }
+.coord-section .eyebrow { font-size: 16px; }
+@media (min-width: 768px) { .coord-section .eyebrow { font-size: 20px; } }
 .coord-grid { margin-top: 2.5rem; display: grid; gap: 2.5rem; text-align: center; }
 @media (min-width: 768px) { .coord-grid { grid-template-columns: repeat(2, 1fr); gap: 3rem; } }
 .coord-card .coord-photo { margin-bottom: 1.25rem; }
@@ -862,7 +863,7 @@ body.modalidade-modal-open { overflow: hidden; }
 /* =========================================================
    Depoimentos
    ========================================================= */
-.depoimentos-section { position: relative; overflow: hidden; background: var(--bg-purple-light); padding: 5rem 0; }
+.depoimentos-section { position: relative; overflow: hidden; background: var(--bg-purple-light); padding: 4rem 0; }
 @media (min-width: 768px) { .depoimentos-section { padding: 7rem 0; } }
 .depoimentos-decor-1 { position: absolute; left: 1.25rem; top: 1rem; height: 2.75rem; width: 2.75rem; border-radius: 999px; background: var(--yellow); pointer-events: none; }
 .depoimentos-decor-2 { position: absolute; right: 1.5rem; top: 1.25rem; height: 1.5rem; width: 1.5rem; background: var(--green); transform: rotate(45deg); pointer-events: none; }
@@ -990,7 +991,7 @@ body.modalidade-modal-open { overflow: hidden; }
 /* =========================================================
    FAQ
    ========================================================= */
-.faq-section { background: var(--bg-offwhite); padding: 5rem 0; }
+.faq-section { background: var(--bg-offwhite); padding: 4rem 0; }
 @media (min-width: 768px) { .faq-section { padding: 7rem 0; } }
 .faq-inner { max-width: 56rem; margin: 0 auto; padding: 0 1.25rem; }
 @media (min-width: 768px) { .faq-inner { padding: 0 2.5rem; } }
@@ -1014,7 +1015,7 @@ body.modalidade-modal-open { overflow: hidden; }
 /* =========================================================
    Unidades
    ========================================================= */
-.unidades-section { background: #fff; padding: 5rem 0; }
+.unidades-section { background: #fff; padding: 4rem 0; }
 @media (min-width: 768px) { .unidades-section { padding: 7rem 0; } }
 .unidades-grid { margin-top: 2.5rem; display: grid; gap: 1.5rem; align-items: stretch; }
 @media (min-width: 1024px) { .unidades-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -1065,7 +1066,7 @@ body.modalidade-modal-open { overflow: hidden; }
 /* =========================================================
    CTA final
    ========================================================= */
-.cta-final-section { position: relative; overflow: hidden; background: var(--blue); padding: 5rem 0; }
+.cta-final-section { position: relative; overflow: hidden; background: var(--blue); padding: 4rem 0; }
 @media (min-width: 768px) { .cta-final-section { padding: 6rem 0; } }
 .cta-final-dots { position: absolute; inset: 0; color: rgba(255,255,255,0.2); pointer-events: none; }
 .cta-final-inner { position: relative; max-width: 64rem; margin: 0 auto; padding: 0 1.25rem; text-align: center; }
