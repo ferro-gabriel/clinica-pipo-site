@@ -679,7 +679,7 @@ body.is-menu-open .mobile-menu-overlay {
 .avaliacao-card { display: block; width: 100%; border: none; font: inherit; text-align: left; cursor: pointer; border-radius: 1.25rem; background: #0199ec; padding: 1.75rem; transition: transform 0.2s ease; box-shadow: 0 20px 40px -28px rgba(1,20,40,0.5); }
 .avaliacao-card:hover { transform: translateY(-4px); }
 .avaliacao-header { display: flex; align-items: center; gap: 1rem; }
-.avaliacao-icon { display: inline-flex; flex-shrink: 0; height: 3rem; width: 3rem; align-items: center; justify-content: center; border-radius: 0.85rem; color: var(--amber); }
+.avaliacao-icon { display: inline-flex; flex-shrink: 0; height: 3rem; width: 3rem; align-items: center; justify-content: center; border-radius: 0.85rem; color: #fff; }
 .avaliacao-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: #fff; }
 .avaliacao-desc { margin-top: 1rem; color: #fff; }
 
