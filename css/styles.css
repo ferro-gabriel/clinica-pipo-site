@@ -630,7 +630,7 @@ body.is-menu-open .mobile-menu-overlay {
 /* =========================================================
    Cuidado único
    ========================================================= */
-.cuidado-section { position: relative; overflow: hidden; background: #fff; padding: 5rem 0; }
+.cuidado-section { position: relative; overflow: hidden; background: #fff; padding: 3rem 0; }
 @media (min-width: 768px) { .cuidado-section { padding: 7rem 0; } }
 .cuidado-dots { position: absolute; inset: 0 0 auto 0; top: 0; height: 10rem; color: rgba(1,155,239,0.2); pointer-events: none; }
 
@@ -665,8 +665,8 @@ body.is-menu-open .mobile-menu-overlay {
 
 .especialidades-list { position: relative; margin-top: 3rem; display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
 @media (min-width: 768px) { .especialidades-list { grid-template-columns: repeat(2, 1fr); column-gap: 2.5rem; row-gap: 2rem; } }
-.especialidade-item { display: flex; flex-direction: column; gap: 0.75rem; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1.5rem; }
-@media (min-width: 640px) { .especialidade-item { flex-direction: row; gap: 2rem; } }
+.especialidade-item { display: flex; flex-direction: row; gap: 0.75rem; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1.5rem; }
+@media (min-width: 640px) { .especialidade-item { gap: 2rem; } }
 .especialidade-num { font-family: var(--font-display); font-size: 3rem; font-weight: 800; line-height: 1; color: var(--blue); }
 @media (min-width: 640px) { .especialidade-num { font-size: 3.75rem; } }
 .especialidade-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: #fff; }
@@ -674,26 +674,26 @@ body.is-menu-open .mobile-menu-overlay {
 
 .multi-cta-wrap { position: relative; margin-top: 2.5rem; text-align: center; }
 
-.avaliacoes-grid { position: relative; margin-top: 2.5rem; display: grid; gap: 1rem; border-radius: 2rem; background: var(--blue); padding: 1.5rem; }
+.avaliacoes-grid { position: relative; margin-top: 2.5rem; display: grid; gap: 1rem; border-radius: 2rem; background: #47aaeb; padding: 1.5rem; }
 @media (min-width: 640px) { .avaliacoes-grid { grid-template-columns: repeat(2, 1fr); padding: 2.5rem; } }
-.avaliacao-card { display: block; width: 100%; border: none; font: inherit; text-align: left; cursor: pointer; border-radius: 1.25rem; background: #58b7fd; padding: 1.75rem; transition: transform 0.2s ease; box-shadow: 0 20px 40px -28px rgba(1,20,40,0.5); }
+.avaliacao-card { display: block; width: 100%; border: none; font: inherit; text-align: left; cursor: pointer; border-radius: 1.25rem; background: #0199ec; padding: 1.75rem; transition: transform 0.2s ease; box-shadow: 0 20px 40px -28px rgba(1,20,40,0.5); }
 .avaliacao-card:hover { transform: translateY(-4px); }
 .avaliacao-header { display: flex; align-items: center; gap: 1rem; }
-.avaliacao-icon { display: inline-flex; flex-shrink: 0; height: 3rem; width: 3rem; align-items: center; justify-content: center; border-radius: 0.85rem; color: #fff; }
+.avaliacao-icon { display: inline-flex; flex-shrink: 0; height: 3rem; width: 3rem; align-items: center; justify-content: center; border-radius: 0.85rem; color: var(--amber); }
 .avaliacao-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: #fff; }
 .avaliacao-desc { margin-top: 1rem; color: #fff; }
 
 /* =========================================================
    Modalidades (grade com modal de detalhes)
    ========================================================= */
-.modalidades-section { position: relative; overflow: hidden; background: var(--navy); padding: 2.5rem 0 5rem; }
+.modalidades-section { position: relative; overflow: hidden; background: var(--navy); padding: 2.5rem 0 3rem; }
 @media (min-width: 768px) { .modalidades-section { padding: 1rem 0 7rem; } }
 .modalidades-dots { position: absolute; inset: 0; color: rgba(255,255,255,0.08); pointer-events: none; }
 .modalidades-glow { position: absolute; right: -6rem; top: -6rem; height: 20rem; width: 20rem; border-radius: 999px; background: radial-gradient(circle, rgba(1,155,239,0.25), transparent 70%); pointer-events: none; }
 
 .modalidades-intro { position: relative; max-width: 38rem; margin: 0 auto; text-align: center; }
 .modalidades-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; border-radius: 999px; background: rgba(255,204,0,0.16); color: var(--yellow); font-weight: 800; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; }
-.modalidades-heading { margin: 1rem 0 0; font-family: var(--font-display); font-weight: 800; font-size: clamp(1.05rem, 4vw, 2.1rem); white-space: nowrap; color: #fff; }
+.modalidades-heading { margin: 1rem 0 0; font-family: var(--font-display); font-weight: 800; font-size: clamp(25px, 4vw, 2.1rem); white-space: nowrap; color: #fff; }
 .modalidades-subtitle { margin: 0.9rem 0 0; font-size: 1.0625rem; line-height: 1.6; color: rgba(185,198,214,1); }
 
 .modalidades-grid2 { position: relative; margin-top: 3rem; display: grid; grid-template-columns: 1fr; gap: 1rem; }
