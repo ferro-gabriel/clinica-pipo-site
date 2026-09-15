@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   setupHeroLeadRotator();
 });
 
-// Frases do hero-lead-sub: trocam a cada 5s com um fade suave.
+// Frases do hero-lead-strong: trocam a cada 5s com um fade suave.
 function setupHeroLeadRotator() {
-  const el = document.getElementById('hero-lead-sub');
+  const el = document.getElementById('hero-lead-strong');
   if (!el) return;
 
   const phrases = [
