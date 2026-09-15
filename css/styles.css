@@ -607,6 +607,7 @@ body.is-menu-open .mobile-menu-overlay {
 @media (min-width: 768px) { .orientacao-grid { padding: 0 2.5rem; } }
 @media (min-width: 1024px) { .orientacao-grid { grid-template-columns: 1.1fr 1fr; } }
 
+.orientacao-cta { margin-top: 1.5rem; }
 .orientacao-list { margin-top: 2.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
 .orientacao-item { display: flex; gap: 1rem; border-radius: 1rem; border: 1px solid rgba(11,34,57,0.08); background: var(--bg-offwhite); padding: 1rem; }
 .orientacao-num { font-family: var(--font-display); flex-shrink: 0; display: flex; height: 2.5rem; width: 2.5rem; align-items: center; justify-content: center; border-radius: 0.75rem; background: var(--blue); font-size: 1.125rem; font-weight: 800; color: #fff; }
