@@ -113,6 +113,7 @@ iframe { border: 0; }
 .btn:active { transform: translateY(0) scale(0.98); box-shadow: 0 4px 10px -6px rgba(11,34,57,0.35); filter: brightness(0.92); }
 @media (prefers-reduced-motion: reduce) { .btn:hover, .btn:active { transform: none; } }
 .btn-sm { min-height: 44px; padding: 0 1.25rem; font-size: 0.9375rem; }
+@media (max-width: 767px) { .btn-sm { min-height: 52px; } }
 .btn-upper { text-transform: none; letter-spacing: 0.05em; padding: 0 2rem; }
 .btn-dark { background: var(--navy); color: #fff; }
 .btn-outline-dark { background: transparent; border: 2px solid rgba(11,34,57,0.15); color: var(--navy); }
