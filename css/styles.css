@@ -1162,7 +1162,7 @@ body.gallery-lightbox-open { overflow: hidden; }
 
 .blog-hero { padding: 2.5rem 0 1rem; text-align: center; }
 .blog-hero h1 { font-family: var(--font-display); font-weight: 800; font-size: 44px; color: var(--navy); margin: 0.75rem 0 0; }
-.blog-hero p { margin: 0.9rem auto 0; max-width: 38rem; color: var(--text-slate); }
+.blog-hero p { margin: 0 auto 0; max-width: 64rem; color: var(--text-slate); }
 
 .blog-grid { margin-top: 3rem; padding-bottom: 5rem; display: grid; grid-template-columns: 1fr; gap: 2rem; }
 @media (min-width: 768px) { .blog-grid { grid-template-columns: repeat(3, 1fr); } }
