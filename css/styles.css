@@ -82,7 +82,7 @@ iframe { border: 0; }
 .section-desc { margin-top: 12px; max-width: 32rem; font-size: 1.125rem; color: var(--text-slate); }
 .section-desc-center { max-width: 68rem; margin-left: auto; margin-right: auto; text-align: center; }
 
-.eyebrow { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.25em; }
+.eyebrow { font-size: 18px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.25em; }
 @media (max-width: 767px) { .eyebrow { font-size: 16px; } }
 .eyebrow-orange { color: var(--orange); }
 .eyebrow-yellow { color: var(--yellow); }
@@ -1161,7 +1161,7 @@ body.gallery-lightbox-open { overflow: hidden; }
 .page-breadcrumb a:hover { text-decoration: underline; }
 
 .blog-hero { padding: 2.5rem 0 1rem; text-align: center; }
-.blog-hero h1 { font-family: var(--font-display); font-weight: 800; font-size: 44px; color: var(--navy); margin: 0.75rem 0 0; }
+.blog-hero h1 { font-family: var(--font-display); font-weight: 800; font-size: 44px; color: var(--navy); margin: 16px 0 0; }
 .blog-hero p { margin: 0 auto 0; max-width: 64rem; color: var(--text-slate); }
 
 .blog-grid { margin-top: 3rem; padding-bottom: 5rem; display: grid; grid-template-columns: 1fr; gap: 2rem; }
