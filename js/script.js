@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupSmoothScroll();
   setupConveniosCarousel();
   setupLeadForm();
+  setupGalleryLightbox();
 });
 
 // Deixa a rolagem do mouse mais suave (Lenis). Toque continua com a rolagem
@@ -546,4 +547,80 @@ function setupConveniosCarousel() {
     centerBradesco();
     window.addEventListener('resize', centerBradesco);
   }
+}
+
+// Lightbox das fotos das unidades: abre ao clicar em qualquer foto da galeria
+// (página principal e páginas de unidade) e permite navegar entre todas as
+// fotos daquela unidade, com setas, teclado ou arraste no toque.
+function setupGalleryLightbox() {
+  const overlay = document.getElementById('gallery-lightbox');
+  if (!overlay) return;
+
+  const dialog = overlay.querySelector('.gallery-lightbox');
+  const stage = overlay.querySelector('.gallery-lightbox-stage');
+  const imgEl = overlay.querySelector('.gallery-lightbox-img');
+  const counterEl = overlay.querySelector('.gallery-lightbox-counter');
+  const closeBtn = overlay.querySelector('.gallery-lightbox-close');
+  const prevBtn = overlay.querySelector('.gallery-lightbox-prev');
+  const nextBtn = overlay.querySelector('.gallery-lightbox-next');
+
+  let photos = [];
+  let currentIndex = 0;
+
+  function render() {
+    const photo = photos[currentIndex];
+    imgEl.src = photo.src;
+    imgEl.alt = photo.alt;
+    counterEl.textContent = `${currentIndex + 1} / ${photos.length}`;
+  }
+
+  function open(gallery, startIndex) {
+    photos = Array.from(gallery.querySelectorAll('img')).map((img) => ({ src: img.src, alt: img.alt }));
+    currentIndex = startIndex;
+    render();
+    overlay.classList.add('is-open');
+    document.body.classList.add('gallery-lightbox-open');
+  }
+
+  function close() {
+    overlay.classList.remove('is-open');
+    document.body.classList.remove('gallery-lightbox-open');
+  }
+
+  function next() {
+    currentIndex = (currentIndex + 1) % photos.length;
+    render();
+  }
+  function prev() {
+    currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+    render();
+  }
+
+  document.querySelectorAll('.unidade-gallery, .unidades-gallery').forEach((gallery) => {
+    Array.from(gallery.querySelectorAll('img')).forEach((img, index) => {
+      img.addEventListener('click', () => open(gallery, index));
+    });
+  });
+
+  overlay.addEventListener('click', close);
+  dialog.addEventListener('click', (e) => e.stopPropagation());
+  closeBtn.addEventListener('click', close);
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+
+  document.addEventListener('keydown', (e) => {
+    if (!overlay.classList.contains('is-open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+  });
+
+  let touchStartX = null;
+  stage.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener('touchend', (e) => {
+    if (touchStartX === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) { dx > 0 ? prev() : next(); }
+    touchStartX = null;
+  }, { passive: true });
 }
