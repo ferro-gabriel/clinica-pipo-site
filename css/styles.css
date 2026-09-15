@@ -844,9 +844,7 @@ body.modalidade-modal-open { overflow: hidden; }
 .coord-dots { position: absolute; inset: 0; color: rgba(255,255,255,0.08); pointer-events: none; }
 .coord-inner { position: relative; max-width: 48rem; margin: 0 auto; padding: 0 1.25rem; text-align: center; }
 .coord-inner-wide { max-width: 68rem; }
-.coord-photo-wrap { position: relative; width: 8rem; height: 8rem; margin: 0 auto; }
-.coord-photo-decor { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 0; width: calc(100% + 1.8rem); height: calc(100% + 1.8rem); max-width: none; object-fit: contain; pointer-events: none; }
-.coord-photo { position: relative; z-index: 1; display: block; width: 100%; height: 100%; border-radius: 999px; object-fit: cover; border: 4px solid rgba(255,255,255,0.15); box-shadow: 0 20px 40px -20px rgba(0,0,0,0.6); }
+.coord-photo { display: block; margin: 0 auto; width: 8rem; height: 8rem; border-radius: 999px; object-fit: cover; border: 4px solid #019bef; box-shadow: 0 20px 40px -20px rgba(0,0,0,0.6); }
 @media (min-width: 768px) { .coord-inner { padding: 0 2.5rem; } }
 .coord-title { font-family: var(--font-display); margin-top: 0.75rem; font-size: 40px; line-height: normal; font-weight: 800; color: #fff; }
 .coord-desc { margin-top: 1rem; font-size: 1.125rem; color: rgba(255,255,255,0.8); }
@@ -857,7 +855,7 @@ body.modalidade-modal-open { overflow: hidden; }
 @media (min-width: 768px) { .coord-section .eyebrow { font-size: 20px; } }
 .coord-grid { margin-top: 2.5rem; display: grid; gap: 2.5rem; text-align: center; }
 @media (min-width: 768px) { .coord-grid { grid-template-columns: repeat(2, 1fr); gap: 3rem; } }
-.coord-card .coord-photo-wrap { margin-bottom: 1.25rem; }
+.coord-card .coord-photo { margin-bottom: 1.25rem; }
 .coord-card .coord-title-sm { margin-top: 0; font-size: 1.5rem; }
 .coord-role { margin-top: 0.35rem; font-weight: 800; font-size: 0.9375rem; line-height: 1.4; color: var(--yellow); }
 .coord-card .coord-role { min-height: 2.8em; }
