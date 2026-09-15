@@ -491,9 +491,8 @@ body.is-menu-open .mobile-menu-overlay {
 .hero-title-underline { position: absolute; bottom: -0.5rem; left: 0; width: 100%; }
 
 .hero-lead { margin-top: 30px; max-width: 35rem; }
-.hero-lead-strong { font-size: 24px; line-height: 1.4; font-weight: 700; color: var(--text-slate); transition: opacity 0.4s ease; }
+.hero-lead-strong { font-size: 24px; line-height: 1.4; font-weight: 700; color: var(--text-slate); }
 .hero-lead-sub { margin-top: 1rem; font-size: 18px; line-height: 1.5; color: var(--text-slate); }
-@media (prefers-reduced-motion: reduce) { .hero-lead-strong { transition: none; } }
 
 .hero-actions { margin-top: 2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
 

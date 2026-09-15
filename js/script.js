@@ -15,30 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupSmoothScroll();
   setupConveniosCarousel();
   setupLeadForm();
-  setupHeroLeadRotator();
 });
-
-// Frases do hero-lead-strong: trocam a cada 5s com um fade suave.
-function setupHeroLeadRotator() {
-  const el = document.getElementById('hero-lead-strong');
-  if (!el) return;
-
-  const phrases = [
-    'Mais possibilidades para o desenvolvimento. Mais segurança para a família.',
-    'Seu filho não precisa esperar. O cuidado e o desenvolvimento podem começar agora.',
-    'Há mais de 20 anos, transformando vidas com cuidado, experiência e propósito.',
-  ];
-  let index = 0;
-
-  setInterval(() => {
-    index = (index + 1) % phrases.length;
-    el.style.opacity = '0';
-    setTimeout(() => {
-      el.textContent = phrases[index];
-      el.style.opacity = '1';
-    }, 400);
-  }, 5000);
-}
 
 // Deixa a rolagem do mouse mais suave (Lenis). Toque continua com a rolagem
 // nativa do celular — só o scroll de roda/trackpad no desktop é suavizado.
