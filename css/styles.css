@@ -622,7 +622,7 @@ body.is-menu-open .mobile-menu-overlay {
 .orientacao-item-desc { margin-top: 0.125rem; font-size: 0.875rem; color: var(--text-slate-3); }
 
 .orientacao-media { margin-top: 40px; }
-@media (min-width: 1024px) { .orientacao-media { margin-top: 5rem; } }
+@media (min-width: 1024px) { .orientacao-media { margin-top: 1rem; } }
 .orientacao-media img { width: 100%; aspect-ratio: 4 / 5; border-radius: 2rem; object-fit: cover; }
 .orientacao-callout { margin-top: 1.25rem; border-radius: 2rem; background: var(--yellow); padding: 1.5rem; text-align: center; }
 .orientacao-callout-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--navy); }
