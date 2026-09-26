@@ -635,7 +635,7 @@ body.is-menu-open .mobile-menu-overlay {
 .orientacao-callout { margin-top: 1.25rem; border-radius: 2rem; background: var(--yellow); padding: 1.5rem; text-align: center; }
 .orientacao-callout-title { margin: 0 0 0.85rem; font-family: var(--font-display); font-size: 22px; font-weight: 800; line-height: 1.2; color: var(--navy); text-wrap: balance; }
 @media (max-width: 767px) { .orientacao-callout-title { max-width: 19rem; margin-left: auto; margin-right: auto; } }
-.orientacao-callout-desc { margin: 1.5rem 0 0; padding: 0; list-style: none; text-align: left; display: flex; flex-direction: column; gap: 0.4rem; }
+.orientacao-callout-desc { margin: 1.5rem 10px 0; padding: 0; list-style: none; text-align: left; display: flex; flex-direction: column; gap: 0.4rem; }
 .orientacao-callout-desc li { position: relative; padding-left: 1.1rem; color: var(--text-slate); }
 .orientacao-callout-desc li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 0.4rem; height: 0.4rem; border-radius: 999px; background: var(--navy); }
 @media (max-width: 767px) {
