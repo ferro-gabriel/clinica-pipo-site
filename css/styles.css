@@ -632,19 +632,18 @@ body.is-menu-open .mobile-menu-overlay {
 @media (min-width: 1024px) { .orientacao-media { margin-top: 1rem; } }
 .orientacao-media img { width: 100%; aspect-ratio: 4 / 5; border-radius: 2rem; object-fit: cover; }
 .orientacao-callout { margin-top: 1.25rem; border-radius: 2rem; background: var(--yellow); padding: 1.5rem; text-align: center; }
-.orientacao-callout-title { margin: 0 0 0.85rem; font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; line-height: 1.2; color: var(--navy); text-wrap: balance; }
+.orientacao-callout-title { margin: 0 0 0.85rem; font-family: var(--font-display); font-size: 20px; font-weight: 800; line-height: 1.2; color: var(--navy); text-wrap: balance; }
 @media (max-width: 767px) { .orientacao-callout-title { max-width: 19rem; margin-left: auto; margin-right: auto; } }
 .orientacao-callout-desc { margin: 0.5rem 0 0; padding: 0; list-style: none; text-align: left; display: flex; flex-direction: column; gap: 0.4rem; }
 .orientacao-callout-desc li { position: relative; padding-left: 1.1rem; color: var(--text-slate); }
 .orientacao-callout-desc li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 0.4rem; height: 0.4rem; border-radius: 999px; background: var(--navy); }
-.orientacao-callout-lead { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--navy); }
+.orientacao-callout-lead { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--navy); text-align: left; }
 .orientacao-callout-lead + .orientacao-callout-desc { margin-top: 0.75rem; }
-.orientacao-callout-desc + .orientacao-callout-lead { margin-top: 1.25rem; font-size: inherit; font-weight: 400; font-style: italic; max-width: none; margin-left: 0; margin-right: 0; }
-@media (min-width: 768px) { .orientacao-callout-desc + .orientacao-callout-lead { margin-top: 12px; font-weight: 700; } }
+.orientacao-callout-desc + .orientacao-callout-lead { margin-top: 1.25rem; }
+@media (min-width: 768px) { .orientacao-callout-desc + .orientacao-callout-lead { margin-top: 12px; } }
 @media (max-width: 767px) {
-  .orientacao-callout-lead { max-width: 20rem; margin-left: auto; margin-right: auto; font-size: clamp(1rem, 6vw, 1.5rem); }
+  .orientacao-callout-lead { font-size: clamp(1rem, 6vw, 1.5rem); }
   .orientacao-callout-desc { font-size: 1.0625rem; }
-  .orientacao-callout-desc + .orientacao-callout-lead { font-size: 1.0625rem; }
 }
 .orientacao-callout-cta-label { margin-top: 1.25rem; font-family: var(--font-display); font-weight: 800; font-size: 1.0625rem; color: var(--navy); }
 .orientacao-callout-actions { margin-top: 0.75rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
