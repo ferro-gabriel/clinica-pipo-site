@@ -633,7 +633,7 @@ body.is-menu-open .mobile-menu-overlay {
 @media (min-width: 1024px) { .orientacao-media { margin-top: 1rem; } }
 .orientacao-media img { width: 100%; aspect-ratio: 4 / 5; border-radius: 2rem; object-fit: cover; }
 .orientacao-callout { margin-top: 1.25rem; border-radius: 2rem; background: var(--yellow); padding: 1.5rem; text-align: center; }
-.orientacao-callout-title { margin: 0 0 0.85rem; font-family: var(--font-display); font-size: 20px; font-weight: 800; line-height: 1.2; color: var(--navy); text-wrap: balance; }
+.orientacao-callout-title { margin: 0 0 0.85rem; font-family: var(--font-display); font-size: 22px; font-weight: 800; line-height: 1.2; color: var(--navy); text-wrap: balance; }
 @media (max-width: 767px) { .orientacao-callout-title { max-width: 19rem; margin-left: auto; margin-right: auto; } }
 .orientacao-callout-desc { margin: 1.5rem 0 0; padding: 0; list-style: none; text-align: left; display: flex; flex-direction: column; gap: 0.4rem; }
 .orientacao-callout-desc li { position: relative; padding-left: 1.1rem; color: var(--text-slate); }
@@ -641,7 +641,7 @@ body.is-menu-open .mobile-menu-overlay {
 @media (max-width: 767px) {
   .orientacao-callout-desc { font-size: 1.0625rem; }
 }
-.orientacao-callout-cta-label { margin-top: 1.25rem; font-family: var(--font-display); font-weight: 800; font-size: 1.0625rem; color: var(--navy); }
+.orientacao-callout-cta-label { margin-top: 1.25rem; font-family: var(--font-display); font-weight: 800; font-size: 18px; color: var(--navy); }
 .orientacao-callout-actions { margin-top: 0.75rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
 
 /* =========================================================
