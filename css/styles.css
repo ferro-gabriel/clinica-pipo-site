@@ -504,7 +504,9 @@ body.is-menu-open .mobile-menu-overlay {
 
 .hero-lead { margin-top: 30px; max-width: 35rem; }
 .hero-lead-strong { font-size: 24px; line-height: 1.4; font-weight: 700; color: var(--text-slate); }
-.hero-lead-sub { margin-top: 1rem; font-size: 18px; line-height: 1.5; color: var(--text-slate); }
+.hero-lead-sub { margin-top: 1rem; list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+.hero-lead-sub li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 18px; line-height: 1.5; color: var(--text-slate); }
+.hero-lead-sub li .icon { flex-shrink: 0; margin-top: 0.3rem; color: var(--blue); }
 
 .hero-actions { margin-top: 2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
 
