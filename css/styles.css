@@ -632,11 +632,11 @@ body.is-menu-open .mobile-menu-overlay {
 .orientacao-media { margin-top: 40px; }
 @media (min-width: 1024px) { .orientacao-media { margin-top: 1rem; } }
 .orientacao-media img { width: 100%; aspect-ratio: 4 / 4; border-radius: 2rem; object-fit: cover; }
-.orientacao-callout { position: relative; overflow: hidden; margin-top: 1.25rem; border-radius: 2rem; background: var(--yellow); padding: 2rem 1.75rem; text-align: center; box-shadow: 0 30px 50px -30px rgba(11,34,57,0.45); }
+.orientacao-callout { position: relative; overflow: hidden; margin-top: 1.25rem; border-radius: 2rem; background: var(--yellow); padding: 2rem 2rem; text-align: center; box-shadow: 0 30px 50px -30px rgba(11,34,57,0.45); }
 .orientacao-callout::before { content: ""; position: absolute; top: -3.5rem; right: -3.5rem; width: 9rem; height: 9rem; border-radius: 999px; background: rgba(255,255,255,0.18); pointer-events: none; }
-.orientacao-callout-title { position: relative; margin: 0 0 1rem; font-family: var(--font-display); font-size: 22px; font-weight: 800; line-height: 1.25; color: var(--navy); text-wrap: balance; }
+.orientacao-callout-title { position: relative; margin: 10px 0 1rem; font-family: var(--font-display); font-size: 22px; font-weight: 800; line-height: 1.25; color: var(--navy); text-wrap: balance; }
 @media (max-width: 767px) { .orientacao-callout-title { max-width: 19rem; margin-left: auto; margin-right: auto; } }
-.orientacao-callout-desc { position: relative; margin: 26px 0 0; padding: 0; list-style: none; text-align: left; display: flex; flex-direction: column; gap: 0.75rem; }
+.orientacao-callout-desc { position: relative; margin: 30px 0 0; padding: 0; list-style: none; text-align: left; display: flex; flex-direction: column; gap: 0.75rem; }
 .orientacao-callout-desc li { position: relative; padding-left: 1.35rem; line-height: 1.45; color: var(--navy); }
 .orientacao-callout-desc li::before { content: ""; position: absolute; left: 0.05rem; top: 0.5em; width: 0.5rem; height: 0.5rem; border-radius: 999px; background: var(--navy); }
 @media (max-width: 767px) {
