@@ -646,7 +646,8 @@ body.is-menu-open .mobile-menu-overlay {
   .orientacao-callout-desc { font-size: 1.0625rem; }
   .orientacao-callout-desc + .orientacao-callout-lead { font-size: 1.0625rem; }
 }
-.orientacao-callout-actions { margin-top: 1.25rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
+.orientacao-callout-cta-label { margin-top: 1.25rem; font-family: var(--font-display); font-weight: 800; font-size: 1.0625rem; color: var(--navy); }
+.orientacao-callout-actions { margin-top: 0.75rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
 
 /* =========================================================
    Cuidado único
