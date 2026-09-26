@@ -200,6 +200,11 @@ iframe { border: 0; }
   height: 2rem; /* Tamanho MENOR para quando rolar a página */
 }
 
+.nav-links a:not(.btn) { transition: font-size 0.3s ease; }
+.nav.is-scrolled .nav-links { font-size: 12px; gap: clamp(1.1rem, 1.6vw, 1.8rem); transition: font-size 0.3s ease, gap 0.3s ease; }
+.nav-cta-desktop .btn { transition: min-height 0.3s ease, padding 0.3s ease, font-size 0.3s ease; }
+.nav.is-scrolled .nav-cta-desktop .btn { min-height: 35px; padding: 0 1rem; font-size: 12px; }
+
 /* Nos celulares ficam apenas a logo e o menu hamburger. */
 .nav-links {
   display: none;
