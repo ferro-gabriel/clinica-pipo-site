@@ -79,7 +79,7 @@ iframe { border: 0; }
 }
 @media (min-width: 640px) { .section-title { font-size: 34px; line-height: 1.15; } }
 
-.section-desc { margin-top: 12px; max-width: 32rem; font-size: 1.125rem; color: var(--text-slate); }
+.section-desc { margin-top: 18px; max-width: 34rem; font-size: 1.125rem; color: var(--text-slate); }
 .section-desc-center { max-width: 68rem; margin-left: auto; margin-right: auto; text-align: center; }
 
 .eyebrow { font-size: 18px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.25em; }
@@ -614,20 +614,21 @@ body.is-menu-open .mobile-menu-overlay {
 @media (min-width: 768px) { .orientacao-grid { padding: 0 2.5rem; } }
 @media (min-width: 1024px) { .orientacao-grid { grid-template-columns: 1fr 1fr; } }
 
-.orientacao-cta { margin-top: 1.5rem; }
+.orientacao-cta { margin-top: 18px; }
 .orientacao-list { margin-top: 2.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
 .orientacao-item { display: flex; gap: 1rem; border-radius: 1rem; border: 1px solid rgba(11,34,57,0.08); background: var(--bg-offwhite); padding: 1rem; }
 .orientacao-num { font-family: var(--font-display); flex-shrink: 0; display: flex; height: 2.5rem; width: 2.5rem; align-items: center; justify-content: center; border-radius: 0.75rem; background: var(--blue); font-size: 1.125rem; font-weight: 800; color: #fff; }
 .orientacao-item-title { font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; color: var(--navy); }
 .orientacao-item-desc { margin-top: 0.125rem; font-size: 0.875rem; color: var(--text-slate-3); }
 
+.orientacao-media { margin-top: 40px; }
 @media (min-width: 1024px) { .orientacao-media { margin-top: 5rem; } }
 .orientacao-media img { width: 100%; aspect-ratio: 4 / 5; border-radius: 2rem; object-fit: cover; }
 .orientacao-callout { margin-top: 1.25rem; border-radius: 2rem; background: var(--yellow); padding: 1.5rem; text-align: center; }
 .orientacao-callout-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--navy); }
 @media (max-width: 767px) { .orientacao-callout-title { max-width: 19rem; margin-left: auto; margin-right: auto; } }
 .orientacao-callout-desc { margin-top: 0.5rem; color: var(--text-slate); }
-.orientacao-callout-lead { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--navy); white-space: nowrap; }
+.orientacao-callout-lead { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--navy); }
 .orientacao-callout-lead + .orientacao-callout-desc { margin-top: 0.75rem; }
 .orientacao-callout-desc + .orientacao-callout-lead { margin-top: 1.25rem; font-size: inherit; font-weight: 400; font-style: italic; white-space: normal; max-width: none; margin-left: 0; margin-right: 0; }
 @media (min-width: 768px) { .orientacao-callout-desc + .orientacao-callout-lead { margin-top: 12px; font-weight: 700; } }
