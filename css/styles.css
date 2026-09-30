@@ -88,7 +88,6 @@ iframe { border: 0; }
 .eyebrow-orange { color: var(--orange); }
 .eyebrow-yellow { color: var(--yellow); }
 
-.text-blue { color: var(--blue); }
 .text-yellow { color: var(--yellow); }
 
 .dots-pattern {
@@ -128,7 +127,6 @@ iframe { border: 0; }
 .btn-blue { background: var(--blue); color: #fff; }
 .btn-yellow { background: var(--yellow); color: var(--navy); }
 .btn-white { background: #fff; color: var(--navy); }
-.btn-deep-orange { background: var(--deep-orange); color: #fff; }
 
 /* =========================================================
    Cabeçalho / Hero
@@ -713,9 +711,7 @@ body.is-menu-open .mobile-menu-overlay {
 @media (max-width: 767px) { .modalidades-glow { right: -8rem; top: -8rem; } }
 
 .modalidades-intro { position: relative; max-width: 38rem; margin: 0 auto; text-align: center; }
-.modalidades-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; border-radius: 999px; background: rgba(255,204,0,0.16); color: var(--yellow); font-weight: 800; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; }
 .modalidades-heading { margin: 1rem 0 0; font-family: var(--font-display); font-weight: 800; font-size: clamp(25px, 4vw, 2.1rem); white-space: nowrap; color: #fff; }
-.modalidades-subtitle { margin: 0.9rem 0 0; font-size: 1.0625rem; line-height: 1.6; color: rgba(185,198,214,1); }
 
 .modalidades-grid2 { position: relative; margin-top: 3rem; display: grid; grid-template-columns: 1fr; gap: 1rem; }
 @media (min-width: 480px) { .modalidades-grid2 { grid-template-columns: repeat(2, 1fr); } }
@@ -835,7 +831,6 @@ body.modalidade-modal-open { overflow: hidden; }
 .aba-card-title { font-family: var(--font-display); font-size: 1.375rem; font-weight: 700; color: var(--navy); }
 .aba-card-desc { font-size: 0.9375rem; line-height: 1.6; color: var(--text-slate-2); }
 
-.aba-cta-wrap { position: relative; margin-top: 3rem; text-align: center; }
 
 /* =========================================================
    Diferenciais
@@ -866,8 +861,6 @@ body.modalidade-modal-open { overflow: hidden; }
 @media (min-width: 768px) { .coord-inner { padding: 0 2.5rem; } }
 .coord-title { font-family: var(--font-display); margin-top: 0.75rem; font-size: 40px; line-height: normal; font-weight: 800; color: #fff; }
 .coord-desc { margin-top: 1rem; font-size: 1.125rem; color: rgba(255,255,255,0.8); }
-.coord-tags { margin-top: 1.75rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
-.coord-tag { border-radius: 999px; background: var(--blue); padding: 0.5rem 1.25rem; font-size: 0.875rem; font-weight: 800; color: #fff; }
 
 .coord-section .eyebrow { font-size: 16px; }
 @media (min-width: 768px) { .coord-section .eyebrow { font-size: 20px; } }
@@ -905,7 +898,6 @@ body.modalidade-modal-open { overflow: hidden; }
    ========================================================= */
 .convenio-logo { display: flex; height: 3.25rem; width: 3.25rem; flex-shrink: 0; align-items: center; justify-content: center; overflow: hidden; border-radius: 0.65rem; background: #fff; border: 1px solid rgba(11,34,57,0.08); }
 .convenio-logo img { height: 100%; width: 100%; object-fit: contain; padding: 0.2rem; }
-.convenio-logo-fallback { font-family: var(--font-display); font-size: 0.7rem; font-weight: 800; color: #fff; text-align: center; line-height: 1; border: none; }
 .convenio-name { font-size: 0.9375rem; font-weight: 700; line-height: 1.25; color: var(--navy); }
 
 /* Carrossel de planos e convênios (logo abaixo da faixa azul do hero) */
@@ -1060,9 +1052,6 @@ body.modalidade-modal-open { overflow: hidden; }
 .unidade-gallery img { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; border-radius: 0.85rem; box-shadow: 0 10px 22px -16px rgba(11,34,57,0.5); transition: transform 0.25s ease; cursor: pointer; }
 .unidade-gallery img:hover { transform: scale(1.03); }
 .unidade-gallery img:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: 4 / 3; }
-.unidade-gallery-placeholder { margin-top: 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; min-height: 12rem; border-radius: 1rem; border: 2px dashed rgba(11,34,57,0.15); background: rgba(11,34,57,0.03); padding: 2rem 1.5rem; text-align: center; }
-.unidade-gallery-placeholder .icon { color: rgba(11,34,57,0.25); }
-.unidade-gallery-placeholder p { font-size: 0.9375rem; font-weight: 700; color: var(--text-slate-2); }
 .unidade-details-btn { margin-top: 1.5rem; align-self: flex-start; }
 @media (max-width: 639px) { .unidades-gallery img:first-child { grid-column: span 2; grid-row: span 1; aspect-ratio: 4 / 3; } }
 
@@ -1220,9 +1209,6 @@ body.gallery-lightbox-open { overflow: hidden; }
 
 .modpage-photo { position: relative; border-radius: 1.75rem; overflow: hidden; aspect-ratio: 4 / 3; }
 .modpage-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.modpage-photo.is-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; background: rgba(11,34,57,0.04); border: 2px dashed rgba(11,34,57,0.15); color: var(--text-slate-2); }
-.modpage-photo.is-placeholder .icon { color: rgba(11,34,57,0.25); }
-.modpage-photo.is-placeholder p { font-size: 0.9375rem; font-weight: 700; }
 .modpage-photo-icon { position: absolute; left: 1.25rem; bottom: 1.25rem; display: inline-flex; align-items: center; justify-content: center; height: 3.5rem; width: 3.5rem; border-radius: 1rem; color: #fff; box-shadow: 0 10px 24px -8px rgba(0,0,0,0.45); }
 
 .modpage-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; border-radius: 999px; font-weight: 800; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; }
