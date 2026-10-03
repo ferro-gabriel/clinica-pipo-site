@@ -14,9 +14,9 @@
   </defs>
 </svg>
 <header id="inicio" class="site-header">
-  <nav class="nav">
+  <nav class="nav" aria-label="Principal">
     <a href="index.html#inicio" class="logo" aria-label="Clínica de Autismo Pipo — início">
-      <img src="assets/logo-pipo-cor-horizontal.png" alt="Pipo | Clínica de Autismo" width="280" height="56" />
+      <img src="assets/logo-pipo-cor-horizontal.png" alt="Pipo | Clínica de Autismo" width="280" height="56" fetchpriority="high" />
     </a>
 
     <div class="nav-links">
@@ -36,7 +36,7 @@
       </div>
     </details>
       <a href="index.html#aba">Intervenção ABA</a>
-      <a href="blog.html" style="color:var(--blue)">Blog</a>
+      <a href="blog.html" style="color:var(--blue-text)">Blog</a>
       <a href="index.html#unidades">Unidades</a>
       <a href="index.html#faq">FAQ</a>
     </div>
@@ -45,13 +45,13 @@
       <a href="https://wa.me/5547999631084?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20unidade%20de%20Blumenau." target="_blank" rel="noopener noreferrer" class="btn btn-blue btn-sm"><svg class="icon" width="16" height="16"><use href="#icon-whatsapp"/></svg> Agendar</a>
     </div>
     <div class="nav-mobile-actions">
-      <button class="menu-toggle" aria-label="Abrir menu" onclick="document.body.classList.toggle('is-menu-open')">
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile" onclick="document.body.classList.toggle('is-menu-open')">
         <svg class="icon-menu" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
         <svg class="icon-close" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
     </div>
   </nav>
-  <div class="mobile-menu-overlay">
+  <div class="mobile-menu-overlay" id="menu-mobile">
     <div class="mobile-menu-content">
       <a href="index.html#avaliacao" class="mobile-link" onclick="document.body.classList.remove('is-menu-open')">Avaliação</a>
       <a href="index.html#multidisciplinar" class="mobile-link" onclick="document.body.classList.remove('is-menu-open')">Terapias</a>

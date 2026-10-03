@@ -23,7 +23,10 @@
 <link rel="icon" type="image/png" href="assets/mascote-rosto.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<!-- Fontes carregam sem travar a exibição da página (o texto aparece já com a fonte reserva) -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" /></noscript>
 <link rel="stylesheet" href="css/styles.css" />
 <!-- Meta Pixel Code -->
 <script>
@@ -45,6 +48,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalClinic","name":"Clínica de Autismo Pipo","url":"https://clinicadeautismopipo.com.br/","image":"https://clinicadeautismopipo.com.br/assets/og-image-preview.jpg","logo":"https://clinicadeautismopipo.com.br/assets/logo-pipo-cor-horizontal.png","medicalSpecialty":"Psychiatric","description":"Avaliação especializada em Autismo (TEA), intervenção ABA e equipe multidisciplinar para crianças, adolescentes e adultos.","priceRange":"$$","areaServed":["Blumenau","Itapema"],"address":[{"@type":"PostalAddress","streetAddress":"Rua Hermann Tribess, 1787, 1º andar - Tribess","addressLocality":"Blumenau","addressRegion":"SC","postalCode":"89057-473","addressCountry":"BR"},{"@type":"PostalAddress","streetAddress":"Rua 210, 130 - Meia Praia","addressLocality":"Itapema","addressRegion":"SC","postalCode":"88220-000","addressCountry":"BR"}],"telephone":["+5547999631084","+5547991069487"],"sameAs":["https://www.instagram.com/clinicadeautismopipo","https://www.tiktok.com/@autismo.pipo.tv","https://www.youtube.com/@PipoTVautismo","https://www.facebook.com/clinicadeautismopipo"]}</script>
 </head>
 <body>
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
 
 <!-- Sprite de ícones (baseado no pacote Phosphor, estilo preenchido) — reaproveitado em vários botões e cartões abaixo -->
 <svg class="icon-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
@@ -93,10 +97,10 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
 
 <header id="inicio" class="site-header">
   
-  <nav class="nav"> <!-- Esta é a tag que havia sumido! -->
+  <nav class="nav" aria-label="Principal"> <!-- Esta é a tag que havia sumido! -->
     
     <a href="#inicio" class="logo" aria-label="Clínica de Autismo Pipo — início">
-      <img src="assets/logo-pipo-cor-horizontal.png" alt="Pipo | Clínica de Autismo" width="280" height="56" />
+      <img src="assets/logo-pipo-cor-horizontal.png" alt="Pipo | Clínica de Autismo" width="280" height="56" fetchpriority="high" />
     </a>
 
     <div class="nav-links">
@@ -130,7 +134,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
 <!-- Botões visíveis apenas no mobile (Menu Hamburger) -->
     <div class="nav-mobile-actions">
       <!-- Botão de abrir/fechar o menu -->
-      <button class="menu-toggle" aria-label="Abrir menu" onclick="document.body.classList.toggle('is-menu-open')">
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile" onclick="document.body.classList.toggle('is-menu-open')">
         <!-- Ícone dos 3 risquinhos -->
         <svg class="icon-menu" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
         <!-- Ícone do X (escondido por padrão) -->
@@ -140,7 +144,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
   </nav>
 
   <!-- Overlay do Menu Mobile (A tela que cobre tudo) -->
-  <div class="mobile-menu-overlay">
+  <div class="mobile-menu-overlay" id="menu-mobile">
     <div class="mobile-menu-content">
       <!-- O onclick aqui garante que o menu feche sozinho ao clicar em um link -->
       <a href="#avaliacao" class="mobile-link" onclick="document.body.classList.remove('is-menu-open')">Avaliação</a>
@@ -218,7 +222,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
   </div>
 </header>
 
-<main>
+<main id="conteudo" tabindex="-1">
 
   <section id="prova-social" class="stats-section">
     <img src="assets/quebra-cabeca.png" alt="" aria-hidden="true" class="stats-decor-1 decor-puzzle" />
@@ -268,7 +272,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
       <button type="button" class="convenios-arrow convenios-arrow-prev" aria-label="Ver planos anteriores">
         <svg class="icon" width="20" height="20"><use href="#icon-caret-left"/></svg>
       </button>
-      <div class="convenios-track" id="convenios-track">
+      <div class="convenios-track" id="convenios-track" tabindex="0" role="region" aria-label="Planos e convênios aceitos">
         <div class="convenio-item"><span class="convenio-logo"><img src="assets/logos-planos/geap.jpeg" alt="Logo Geap" /></span><span class="convenio-name">Geap</span></div>
         <div class="convenio-item"><span class="convenio-logo"><img src="assets/logos-planos/sim.jpeg" alt="Logo SIM" /></span><span class="convenio-name">SIM</span></div>
         <div class="convenio-item"><span class="convenio-logo"><img src="assets/logos-planos/select.jpeg" alt="Logo Select Saúde" /></span><span class="convenio-name">Select Saúde</span></div>
@@ -497,7 +501,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
           </figure>
           <span class="modalidade-btn-body">
             <span class="modalidade-btn-title">Terapia Ocupacional</span>
-            <span class="modalidade-btn-link" style="color:#7c4dff">Ver detalhes <svg class="icon" width="14" height="14"><use href="#icon-arrow-right"/></svg></span>
+            <span class="modalidade-btn-link" style="color:#a07dff">Ver detalhes <svg class="icon" width="14" height="14"><use href="#icon-arrow-right"/></svg></span>
           </span>
         </button>
         <button type="button" class="reveal modalidade-btn" data-modalidade="psico">
@@ -507,7 +511,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
           </figure>
           <span class="modalidade-btn-body">
             <span class="modalidade-btn-title">Psicologia</span>
-            <span class="modalidade-btn-link" style="color:#e8368f">Ver detalhes <svg class="icon" width="14" height="14"><use href="#icon-arrow-right"/></svg></span>
+            <span class="modalidade-btn-link" style="color:#ed61a7">Ver detalhes <svg class="icon" width="14" height="14"><use href="#icon-arrow-right"/></svg></span>
           </span>
         </button>
         <button type="button" class="reveal modalidade-btn" data-modalidade="psicoped">
@@ -831,7 +835,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
           <article class="depoimento-card">
             <div class="depoimento-header">
               <img src="assets/avatar-generico.svg" alt="Foto de Camila Martins" />
-              <div><p class="depoimento-nome">Camila Martins</p><span class="depoimento-role" style="color:#019bef">um ano atrás</span></div>
+              <div><p class="depoimento-nome">Camila Martins</p><span class="depoimento-role" style="color:#0170ad">um ano atrás</span></div>
             </div>
             <div class="depoimento-stars">
               <svg class="icon icon-star-fill" width="16" height="16"><use href="#icon-star"/></svg>
@@ -847,7 +851,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
           <article class="depoimento-card">
             <div class="depoimento-header">
               <img src="assets/avatar-generico.svg" alt="Foto de Kleyton de Souza Ribeiro" />
-              <div><p class="depoimento-nome">Kleyton de Souza Ribeiro</p><span class="depoimento-role" style="color:#e8368f">um ano atrás</span></div>
+              <div><p class="depoimento-nome">Kleyton de Souza Ribeiro</p><span class="depoimento-role" style="color:#c7176f">um ano atrás</span></div>
             </div>
             <div class="depoimento-stars">
               <svg class="icon icon-star-fill" width="16" height="16"><use href="#icon-star"/></svg>
@@ -863,7 +867,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
           <article class="depoimento-card">
             <div class="depoimento-header">
               <img src="assets/avatar-generico.svg" alt="Foto de Adriana Ferreira" />
-              <div><p class="depoimento-nome">Adriana Ferreira</p><span class="depoimento-role" style="color:#7c4dff">9 meses atrás</span></div>
+              <div><p class="depoimento-nome">Adriana Ferreira</p><span class="depoimento-role" style="color:#6f3bff">9 meses atrás</span></div>
             </div>
             <div class="depoimento-stars">
               <svg class="icon icon-star-fill" width="16" height="16"><use href="#icon-star"/></svg>
@@ -897,15 +901,15 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
             </div>
           </article>
           <div class="unidade-gallery">
-            <img src="assets/clinica/fachada.jpg" alt="Fachada da unidade Blumenau" loading="lazy" />
-            <img src="assets/clinica/sala-psicomotricidade.jpg" alt="Criança em atividade de psicomotricidade na unidade Blumenau" loading="lazy" />
-            <img src="assets/clinica/musicoterapia.jpg" alt="Sessão de musicoterapia na unidade Blumenau" loading="lazy" />
-            <img src="assets/clinica/piscina-bolinhas.jpg" alt="Piscina de bolinhas da unidade Blumenau" loading="lazy" />
-            <img src="assets/clinica/atendimento-individual.jpg" alt="Atendimento individual na unidade Blumenau" loading="lazy" />
-            <img src="assets/clinica/atendimento-familia.jpg" alt="Atendimento com a família na unidade Blumenau" loading="lazy" />
-            <img src="assets/clinica/equipe.jpg" alt="Profissional da equipe Pipo em Blumenau" loading="lazy" />
-            <img src="assets/clinica/sala-fisioterapia.jpg" alt="Sala de fisioterapia da unidade Blumenau" loading="lazy" />
-            <img src="assets/clinica/coordenacao-equipe.jpg" alt="Coordenador clínico com a equipe em Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/fachada.jpg" data-full="assets/clinica/fachada.jpg" alt="Fachada da unidade Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/sala-psicomotricidade.jpg" data-full="assets/clinica/sala-psicomotricidade.jpg" alt="Criança em atividade de psicomotricidade na unidade Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/musicoterapia.jpg" data-full="assets/clinica/musicoterapia.jpg" alt="Sessão de musicoterapia na unidade Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/piscina-bolinhas.jpg" data-full="assets/clinica/piscina-bolinhas.jpg" alt="Piscina de bolinhas da unidade Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/atendimento-individual.jpg" data-full="assets/clinica/atendimento-individual.jpg" alt="Atendimento individual na unidade Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/atendimento-familia.jpg" data-full="assets/clinica/atendimento-familia.jpg" alt="Atendimento com a família na unidade Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/equipe.jpg" data-full="assets/clinica/equipe.jpg" alt="Profissional da equipe Pipo em Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/sala-fisioterapia.jpg" data-full="assets/clinica/sala-fisioterapia.jpg" alt="Sala de fisioterapia da unidade Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/coordenacao-equipe.jpg" data-full="assets/clinica/coordenacao-equipe.jpg" alt="Coordenador clínico com a equipe em Blumenau" loading="lazy" />
           </div>
           <a href="unidade-blumenau.html" class="btn btn-outline-dark unidade-details-btn">Mais detalhes <svg class="icon" width="16" height="16"><use href="#icon-arrow-right"/></svg></a>
         </div>
@@ -920,15 +924,15 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
             </div>
           </article>
           <div class="unidade-gallery">
-            <img src="assets/clinica-itapema/fachada.jpg" alt="Fachada da unidade Itapema" loading="lazy" />
-            <img src="assets/clinica-itapema/trampolim-externo.jpg" alt="Trampolim na área externa da unidade Itapema" loading="lazy" />
-            <img src="assets/clinica-itapema/logo-recepcao.jpg" alt="Recepção da unidade Itapema" loading="lazy" />
-            <img src="assets/clinica-itapema/sala-sensorial-piscina-bolinhas.jpg" alt="Sala sensorial com piscina de bolinhas na unidade Itapema" loading="lazy" />
-            <img src="assets/clinica-itapema/area-espera-tv.jpg" alt="Área de espera da unidade Itapema" loading="lazy" />
-            <img src="assets/clinica-itapema/sala-atendimento-1.jpg" alt="Sala de atendimento da unidade Itapema" loading="lazy" />
-            <img src="assets/clinica-itapema/sala-sensorial-balancos.jpg" alt="Sala sensorial com balanços na unidade Itapema" loading="lazy" />
-            <img src="assets/clinica-itapema/sala-atendimento-2.jpg" alt="Sala de atendimento da unidade Itapema" loading="lazy" />
-            <img src="assets/clinica-itapema/sala-atendimento-3.jpg" alt="Sala de atendimento da unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/fachada.jpg" data-full="assets/clinica-itapema/fachada.jpg" alt="Fachada da unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/trampolim-externo.jpg" data-full="assets/clinica-itapema/trampolim-externo.jpg" alt="Trampolim na área externa da unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/logo-recepcao.jpg" data-full="assets/clinica-itapema/logo-recepcao.jpg" alt="Recepção da unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/sala-sensorial-piscina-bolinhas.jpg" data-full="assets/clinica-itapema/sala-sensorial-piscina-bolinhas.jpg" alt="Sala sensorial com piscina de bolinhas na unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/area-espera-tv.jpg" data-full="assets/clinica-itapema/area-espera-tv.jpg" alt="Área de espera da unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/sala-atendimento-1.jpg" data-full="assets/clinica-itapema/sala-atendimento-1.jpg" alt="Sala de atendimento da unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/sala-sensorial-balancos.jpg" data-full="assets/clinica-itapema/sala-sensorial-balancos.jpg" alt="Sala sensorial com balanços na unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/sala-atendimento-2.jpg" data-full="assets/clinica-itapema/sala-atendimento-2.jpg" alt="Sala de atendimento da unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/sala-atendimento-3.jpg" data-full="assets/clinica-itapema/sala-atendimento-3.jpg" alt="Sala de atendimento da unidade Itapema" loading="lazy" />
           </div>
           <a href="unidade-itapema.html" class="btn btn-outline-dark unidade-details-btn">Mais detalhes <svg class="icon" width="16" height="16"><use href="#icon-arrow-right"/></svg></a>
         </div>
@@ -1100,7 +1104,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
         <a href="https://www.facebook.com/clinicadeautismopipo" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="icon" width="16" height="16"><use href="#icon-facebook"/></svg></a>
       </div>
     </div>
-    <nav class="footer-nav">
+    <nav class="footer-nav" aria-label="Rodapé">
       <p class="footer-col-title">Navegue</p>
       <ul>
         <li><a href="#orientacao">Orientação inicial</a></li>

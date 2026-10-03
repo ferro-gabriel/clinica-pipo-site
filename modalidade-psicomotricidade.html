@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://clinicadeautismopipo.com.br/modalidade-psicomotricidade.html" />
 <meta property="og:url" content="https://clinicadeautismopipo.com.br/modalidade-psicomotricidade.html" />
 <meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
 <meta property="og:site_name" content="Clínica de Autismo Pipo" />
 <meta property="og:title" content="Psicomotricidade para Autismo | Clínica de Autismo Pipo" />
 <meta property="og:description" content="Psicomotricidade na Clínica Pipo: equilíbrio, coordenação e esquema corporal para o desenvolvimento infantil." />
@@ -19,7 +20,10 @@
 <link rel="icon" type="image/png" href="assets/mascote-rosto.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<!-- Fontes carregam sem travar a exibição da página (o texto aparece já com a fonte reserva) -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" /></noscript>
 <link rel="stylesheet" href="css/styles.css" />
 <!-- Meta Pixel Code -->
 <script>
@@ -38,9 +42,10 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalTherapy","name":"Psicomotricidade","description":"Psicomotricidade na Clínica Pipo: equilíbrio, coordenação e esquema corporal para o desenvolvimento infantil.","provider":{"@type":"MedicalClinic","name":"Clínica de Autismo Pipo","url":"https://clinicadeautismopipo.com.br"}}</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"MedicalTherapy","name":"Psicomotricidade","description":"Psicomotricidade na Clínica Pipo: equilíbrio, coordenação e esquema corporal para o desenvolvimento infantil.","provider":{"@type":"MedicalClinic","name":"Clínica de Autismo Pipo","url":"https://clinicadeautismopipo.com.br"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://clinicadeautismopipo.com.br/"},{"@type":"ListItem","position":2,"name":"Modalidades","item":"https://clinicadeautismopipo.com.br/index.html#modalidades"},{"@type":"ListItem","position":3,"name":"Psicomotricidade","item":"https://clinicadeautismopipo.com.br/modalidade-psicomotricidade.html"}]}]</script>
 </head>
 <body>
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
 
 <svg class="icon-sprite" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
   <defs>
@@ -67,9 +72,9 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
   </defs>
 </svg>
 <header id="inicio" class="site-header">
-  <nav class="nav">
+  <nav class="nav" aria-label="Principal">
     <a href="index.html#inicio" class="logo" aria-label="Clínica de Autismo Pipo — início">
-      <img src="assets/logo-pipo-cor-horizontal.png" alt="Pipo | Clínica de Autismo" width="280" height="56" />
+      <img src="assets/logo-pipo-cor-horizontal.png" alt="Pipo | Clínica de Autismo" width="280" height="56" fetchpriority="high" />
     </a>
 
     <div class="nav-links">
@@ -82,7 +87,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
       <a href="modalidade-terapia-ocupacional.html">Terapia Ocupacional</a>
       <a href="modalidade-psicologia.html">Psicologia</a>
       <a href="modalidade-psicopedagogia.html">Psicopedagogia</a>
-      <a href="modalidade-psicomotricidade.html" style="color:var(--blue)">Psicomotricidade</a>
+      <a href="modalidade-psicomotricidade.html" style="color:var(--blue-text)">Psicomotricidade</a>
       <a href="modalidade-musicoterapia.html">Musicoterapia</a>
       <a href="modalidade-fisioterapia.html">Fisioterapia</a>
       <a href="modalidade-nutricao.html">Nutrição</a>
@@ -98,13 +103,13 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
       <a href="https://wa.me/5547999631084?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20Psicomotricidade." target="_blank" rel="noopener noreferrer" class="btn btn-blue btn-sm"><svg class="icon" width="16" height="16"><use href="#icon-whatsapp"/></svg> Agendar</a>
     </div>
     <div class="nav-mobile-actions">
-      <button class="menu-toggle" aria-label="Abrir menu" onclick="document.body.classList.toggle('is-menu-open')">
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile" onclick="document.body.classList.toggle('is-menu-open')">
         <svg class="icon-menu" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
         <svg class="icon-close" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
     </div>
   </nav>
-  <div class="mobile-menu-overlay">
+  <div class="mobile-menu-overlay" id="menu-mobile">
     <div class="mobile-menu-content">
       <a href="index.html#avaliacao" class="mobile-link" onclick="document.body.classList.remove('is-menu-open')">Avaliação</a>
       <a href="index.html#multidisciplinar" class="mobile-link" onclick="document.body.classList.remove('is-menu-open')">Terapias</a>
@@ -131,7 +136,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
 </header>
 <div class="page-header-spacer" aria-hidden="true"></div>
 
-<main>
+<main id="conteudo" tabindex="-1">
   <div class="section-inner section-inner-narrow">
     <p class="page-breadcrumb"><a href="index.html">Início</a> / <a href="index.html#modalidades">Modalidades</a> / Psicomotricidade</p>
   </div>
@@ -145,7 +150,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
           <span class="modpage-photo-icon" style="background-color:#3fb96b"><svg class="icon" width="26" height="26"><use href="#icon-footprints"/></svg></span>
         </figure>
         <div>
-          <span class="modpage-eyebrow" style="background:#3fb96b1f;color:#3fb96b">Modalidade terapêutica</span>
+          <span class="modpage-eyebrow" style="background:#3fb96b1f;color:#2a7a47">Modalidade terapêutica</span>
           <h1 class="modpage-title">Psicomotricidade</h1>
           <p class="modpage-indicado">Crianças com dificuldades de equilíbrio, coordenação ou noção corporal.</p>
           <p class="modpage-desc">Desenvolve o corpo em movimento: equilíbrio, coordenação e esquema corporal como base para aprendizagem e autonomia.</p>
@@ -169,7 +174,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
       <div class="modpage-section">
         <h2>Abordagens utilizadas</h2>
         <div class="modpage-tags">
-        <span style="background:#3fb96b1f;color:#3fb96b">Psicomotricidade Relacional</span>
+        <span style="background:#3fb96b1f;color:#2a7a47">Psicomotricidade Relacional</span>
         </div>
       </div>
 
@@ -199,7 +204,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
           </figure>
           <span class="modalidade-btn-body">
             <span class="modalidade-btn-title">Terapia Ocupacional</span>
-            <span class="modalidade-btn-link" style="color:#7c4dff">Ver detalhes <svg class="icon" width="14" height="14"><use href="#icon-arrow-right"/></svg></span>
+            <span class="modalidade-btn-link" style="color:#a07dff">Ver detalhes <svg class="icon" width="14" height="14"><use href="#icon-arrow-right"/></svg></span>
           </span>
         </a>
         <a href="modalidade-psicologia.html" class="modalidade-btn">
@@ -209,7 +214,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
           </figure>
           <span class="modalidade-btn-body">
             <span class="modalidade-btn-title">Psicologia</span>
-            <span class="modalidade-btn-link" style="color:#e8368f">Ver detalhes <svg class="icon" width="14" height="14"><use href="#icon-arrow-right"/></svg></span>
+            <span class="modalidade-btn-link" style="color:#ed61a7">Ver detalhes <svg class="icon" width="14" height="14"><use href="#icon-arrow-right"/></svg></span>
           </span>
         </a>
         <a href="modalidade-psicopedagogia.html" class="modalidade-btn">
@@ -270,7 +275,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
         <a href="https://www.facebook.com/clinicadeautismopipo" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="icon" width="16" height="16"><use href="#icon-facebook"/></svg></a>
       </div>
     </div>
-    <nav class="footer-nav">
+    <nav class="footer-nav" aria-label="Rodapé">
       <p class="footer-col-title">Navegue</p>
       <ul>
         <li><a href="index.html#orientacao">Orientação inicial</a></li>
