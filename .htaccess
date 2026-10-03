@@ -1,0 +1,48 @@
+# Clínica de Autismo Pipo — configuração do servidor (Hostinger)
+# Publicado junto com o site pelo GitHub Actions (.github/workflows/deploy.yml).
+#
+# Cache do navegador: quem volta ao site não baixa de novo o que não mudou.
+# - HTML: sempre confere se há versão nova (textos atualizados aparecem na hora).
+# - CSS/JS: 1 ano. O deploy acrescenta ?v=<commit> nos links, então cada
+#   publicação gera um endereço novo e o navegador baixa a versão atualizada.
+# - Imagens e fontes: 30 dias.
+#
+# Os blocos <IfModule> fazem o servidor ignorar a regra (em vez de dar erro)
+# caso algum módulo não esteja disponível.
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 day"
+
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 0 seconds"
+  ExpiresByType text/xml "access plus 0 seconds"
+
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/x-icon "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 30 days"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|xml)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+  <FilesMatch "\.(jpe?g|png|webp|svg|ico|woff2)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
+
+# Compressão de textos (HTML, CSS, JS, SVG) para baixarem mais rápido
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript text/javascript image/svg+xml application/ld+json
+</IfModule>
