@@ -23,7 +23,10 @@
 <link rel="icon" type="image/png" href="assets/mascote-rosto.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<!-- Fontes carregam sem travar a exibição da página (o texto aparece já com a fonte reserva) -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" /></noscript>
 <link rel="stylesheet" href="css/styles.css" />
 <!-- Meta Pixel Code -->
 <script>
@@ -97,7 +100,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
   <nav class="nav" aria-label="Principal"> <!-- Esta é a tag que havia sumido! -->
     
     <a href="#inicio" class="logo" aria-label="Clínica de Autismo Pipo — início">
-      <img src="assets/logo-pipo-cor-horizontal.png" alt="Pipo | Clínica de Autismo" width="280" height="56" />
+      <img src="assets/logo-pipo-cor-horizontal.png" alt="Pipo | Clínica de Autismo" width="280" height="56" fetchpriority="high" />
     </a>
 
     <div class="nav-links">
@@ -898,15 +901,15 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
             </div>
           </article>
           <div class="unidade-gallery">
-            <img src="assets/clinica/fachada.jpg" alt="Fachada da unidade Blumenau" loading="lazy" />
-            <img src="assets/clinica/sala-psicomotricidade.jpg" alt="Criança em atividade de psicomotricidade na unidade Blumenau" loading="lazy" />
-            <img src="assets/clinica/musicoterapia.jpg" alt="Sessão de musicoterapia na unidade Blumenau" loading="lazy" />
-            <img src="assets/clinica/piscina-bolinhas.jpg" alt="Piscina de bolinhas da unidade Blumenau" loading="lazy" />
-            <img src="assets/clinica/atendimento-individual.jpg" alt="Atendimento individual na unidade Blumenau" loading="lazy" />
-            <img src="assets/clinica/atendimento-familia.jpg" alt="Atendimento com a família na unidade Blumenau" loading="lazy" />
-            <img src="assets/clinica/equipe.jpg" alt="Profissional da equipe Pipo em Blumenau" loading="lazy" />
-            <img src="assets/clinica/sala-fisioterapia.jpg" alt="Sala de fisioterapia da unidade Blumenau" loading="lazy" />
-            <img src="assets/clinica/coordenacao-equipe.jpg" alt="Coordenador clínico com a equipe em Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/fachada.jpg" data-full="assets/clinica/fachada.jpg" alt="Fachada da unidade Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/sala-psicomotricidade.jpg" data-full="assets/clinica/sala-psicomotricidade.jpg" alt="Criança em atividade de psicomotricidade na unidade Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/musicoterapia.jpg" data-full="assets/clinica/musicoterapia.jpg" alt="Sessão de musicoterapia na unidade Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/piscina-bolinhas.jpg" data-full="assets/clinica/piscina-bolinhas.jpg" alt="Piscina de bolinhas da unidade Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/atendimento-individual.jpg" data-full="assets/clinica/atendimento-individual.jpg" alt="Atendimento individual na unidade Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/atendimento-familia.jpg" data-full="assets/clinica/atendimento-familia.jpg" alt="Atendimento com a família na unidade Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/equipe.jpg" data-full="assets/clinica/equipe.jpg" alt="Profissional da equipe Pipo em Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/sala-fisioterapia.jpg" data-full="assets/clinica/sala-fisioterapia.jpg" alt="Sala de fisioterapia da unidade Blumenau" loading="lazy" />
+            <img src="assets/clinica/thumbs/coordenacao-equipe.jpg" data-full="assets/clinica/coordenacao-equipe.jpg" alt="Coordenador clínico com a equipe em Blumenau" loading="lazy" />
           </div>
           <a href="unidade-blumenau.html" class="btn btn-outline-dark unidade-details-btn">Mais detalhes <svg class="icon" width="16" height="16"><use href="#icon-arrow-right"/></svg></a>
         </div>
@@ -921,15 +924,15 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
             </div>
           </article>
           <div class="unidade-gallery">
-            <img src="assets/clinica-itapema/fachada.jpg" alt="Fachada da unidade Itapema" loading="lazy" />
-            <img src="assets/clinica-itapema/trampolim-externo.jpg" alt="Trampolim na área externa da unidade Itapema" loading="lazy" />
-            <img src="assets/clinica-itapema/logo-recepcao.jpg" alt="Recepção da unidade Itapema" loading="lazy" />
-            <img src="assets/clinica-itapema/sala-sensorial-piscina-bolinhas.jpg" alt="Sala sensorial com piscina de bolinhas na unidade Itapema" loading="lazy" />
-            <img src="assets/clinica-itapema/area-espera-tv.jpg" alt="Área de espera da unidade Itapema" loading="lazy" />
-            <img src="assets/clinica-itapema/sala-atendimento-1.jpg" alt="Sala de atendimento da unidade Itapema" loading="lazy" />
-            <img src="assets/clinica-itapema/sala-sensorial-balancos.jpg" alt="Sala sensorial com balanços na unidade Itapema" loading="lazy" />
-            <img src="assets/clinica-itapema/sala-atendimento-2.jpg" alt="Sala de atendimento da unidade Itapema" loading="lazy" />
-            <img src="assets/clinica-itapema/sala-atendimento-3.jpg" alt="Sala de atendimento da unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/fachada.jpg" data-full="assets/clinica-itapema/fachada.jpg" alt="Fachada da unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/trampolim-externo.jpg" data-full="assets/clinica-itapema/trampolim-externo.jpg" alt="Trampolim na área externa da unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/logo-recepcao.jpg" data-full="assets/clinica-itapema/logo-recepcao.jpg" alt="Recepção da unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/sala-sensorial-piscina-bolinhas.jpg" data-full="assets/clinica-itapema/sala-sensorial-piscina-bolinhas.jpg" alt="Sala sensorial com piscina de bolinhas na unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/area-espera-tv.jpg" data-full="assets/clinica-itapema/area-espera-tv.jpg" alt="Área de espera da unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/sala-atendimento-1.jpg" data-full="assets/clinica-itapema/sala-atendimento-1.jpg" alt="Sala de atendimento da unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/sala-sensorial-balancos.jpg" data-full="assets/clinica-itapema/sala-sensorial-balancos.jpg" alt="Sala sensorial com balanços na unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/sala-atendimento-2.jpg" data-full="assets/clinica-itapema/sala-atendimento-2.jpg" alt="Sala de atendimento da unidade Itapema" loading="lazy" />
+            <img src="assets/clinica-itapema/thumbs/sala-atendimento-3.jpg" data-full="assets/clinica-itapema/sala-atendimento-3.jpg" alt="Sala de atendimento da unidade Itapema" loading="lazy" />
           </div>
           <a href="unidade-itapema.html" class="btn btn-outline-dark unidade-details-btn">Mais detalhes <svg class="icon" width="16" height="16"><use href="#icon-arrow-right"/></svg></a>
         </div>

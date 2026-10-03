@@ -642,7 +642,8 @@ function setupGalleryLightbox() {
   }
 
   function open(gallery, startIndex) {
-    photos = Array.from(gallery.querySelectorAll('img')).map((img) => ({ src: img.src, alt: img.alt }));
+    // Na página aparece a miniatura; ampliada, a foto original (data-full).
+    photos = Array.from(gallery.querySelectorAll('img')).map((img) => ({ src: img.dataset.full || img.src, alt: img.alt }));
     currentIndex = startIndex;
     render();
     overlay.classList.add('is-open');

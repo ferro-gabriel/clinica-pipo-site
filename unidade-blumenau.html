@@ -20,7 +20,10 @@
 <link rel="icon" type="image/png" href="assets/mascote-rosto.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<!-- Fontes carregam sem travar a exibição da página (o texto aparece já com a fonte reserva) -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" /></noscript>
 <link rel="stylesheet" href="css/styles.css" />
 <!-- Meta Pixel Code -->
 <script>
@@ -68,7 +71,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
 <header id="inicio" class="site-header">
   <nav class="nav" aria-label="Principal">
     <a href="index.html#inicio" class="logo" aria-label="Clínica de Autismo Pipo — início">
-      <img src="assets/logo-pipo-cor-horizontal.png" alt="Pipo | Clínica de Autismo" width="280" height="56" />
+      <img src="assets/logo-pipo-cor-horizontal.png" alt="Pipo | Clínica de Autismo" width="280" height="56" fetchpriority="high" />
     </a>
 
     <div class="nav-links">
@@ -165,18 +168,18 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
         <h2>Conheça o espaço</h2>
         <div class="unidades-gallery" style="margin-top:1.5rem">
           <img src="assets/clinica/fachada.jpg" alt="Fachada da unidade Blumenau" loading="lazy" />
-          <img src="assets/clinica/piscina-bolinhas.jpg" alt="Piscina de bolinhas da unidade Blumenau" loading="lazy" />
-          <img src="assets/clinica/reuniao-clinica.jpg" alt="Reunião da equipe clínica em Blumenau" loading="lazy" />
-          <img src="assets/clinica/integracao-sensorial.jpg" alt="Criança em atividade de integração sensorial em Blumenau" loading="lazy" />
-          <img src="assets/clinica/atendimento-individual.jpg" alt="Atendimento individual com a família em Blumenau" loading="lazy" />
-          <img src="assets/clinica/sala-psicomotricidade.jpg" alt="Criança em atividade de psicomotricidade em Blumenau" loading="lazy" />
-          <img src="assets/clinica/atendimento-familia.jpg" alt="Atendimento terapêutico com a família em Blumenau" loading="lazy" />
-          <img src="assets/clinica/equipe.jpg" alt="Profissional da equipe Pipo em Blumenau" loading="lazy" />
-          <img src="assets/clinica/sala-atendimento-familia.jpg" alt="Reunião de acolhimento com a família em Blumenau" loading="lazy" />
-          <img src="assets/clinica/musicoterapia.jpg" alt="Sessão de musicoterapia em Blumenau" loading="lazy" />
-          <img src="assets/clinica/equipe-multidisciplinar.jpg" alt="Reunião da equipe multidisciplinar em Blumenau" loading="lazy" />
-          <img src="assets/clinica/sala-fisioterapia.jpg" alt="Sala de fisioterapia e psicomotricidade em Blumenau" loading="lazy" />
-          <img src="assets/clinica/coordenacao-equipe.jpg" alt="Coordenador clínico com a equipe em Blumenau" loading="lazy" />
+          <img src="assets/clinica/thumbs/piscina-bolinhas.jpg" data-full="assets/clinica/piscina-bolinhas.jpg" alt="Piscina de bolinhas da unidade Blumenau" loading="lazy" />
+          <img src="assets/clinica/thumbs/reuniao-clinica.jpg" data-full="assets/clinica/reuniao-clinica.jpg" alt="Reunião da equipe clínica em Blumenau" loading="lazy" />
+          <img src="assets/clinica/thumbs/integracao-sensorial.jpg" data-full="assets/clinica/integracao-sensorial.jpg" alt="Criança em atividade de integração sensorial em Blumenau" loading="lazy" />
+          <img src="assets/clinica/thumbs/atendimento-individual.jpg" data-full="assets/clinica/atendimento-individual.jpg" alt="Atendimento individual com a família em Blumenau" loading="lazy" />
+          <img src="assets/clinica/thumbs/sala-psicomotricidade.jpg" data-full="assets/clinica/sala-psicomotricidade.jpg" alt="Criança em atividade de psicomotricidade em Blumenau" loading="lazy" />
+          <img src="assets/clinica/thumbs/atendimento-familia.jpg" data-full="assets/clinica/atendimento-familia.jpg" alt="Atendimento terapêutico com a família em Blumenau" loading="lazy" />
+          <img src="assets/clinica/thumbs/equipe.jpg" data-full="assets/clinica/equipe.jpg" alt="Profissional da equipe Pipo em Blumenau" loading="lazy" />
+          <img src="assets/clinica/thumbs/sala-atendimento-familia.jpg" data-full="assets/clinica/sala-atendimento-familia.jpg" alt="Reunião de acolhimento com a família em Blumenau" loading="lazy" />
+          <img src="assets/clinica/thumbs/musicoterapia.jpg" data-full="assets/clinica/musicoterapia.jpg" alt="Sessão de musicoterapia em Blumenau" loading="lazy" />
+          <img src="assets/clinica/thumbs/equipe-multidisciplinar.jpg" data-full="assets/clinica/equipe-multidisciplinar.jpg" alt="Reunião da equipe multidisciplinar em Blumenau" loading="lazy" />
+          <img src="assets/clinica/thumbs/sala-fisioterapia.jpg" data-full="assets/clinica/sala-fisioterapia.jpg" alt="Sala de fisioterapia e psicomotricidade em Blumenau" loading="lazy" />
+          <img src="assets/clinica/thumbs/coordenacao-equipe.jpg" data-full="assets/clinica/coordenacao-equipe.jpg" alt="Coordenador clínico com a equipe em Blumenau" loading="lazy" />
         </div>
       </div>
 

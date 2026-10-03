@@ -23,6 +23,7 @@
   --blue-text: #0170ad;
   --orange-text: #c93000;
   --deep-orange-title: #e64a19; /* títulos grandes (exigem 3:1) */
+  --blue-button: #017abc; /* fundo de botões/selos com texto branco (4,5:1) */
 
   --bg-beige: #f6efe2;
   --bg-offwhite: #fbfaf6;
@@ -136,7 +137,7 @@ iframe { border: 0; }
 .btn-dark { background: var(--navy); color: #fff; }
 .btn-outline-dark { background: transparent; border: 2px solid rgba(11,34,57,0.15); color: var(--navy); }
 .btn-outline-dark:hover { border-color: var(--blue); color: var(--blue); filter: none; }
-.btn-blue { background: var(--blue); color: #fff; }
+.btn-blue { background: var(--blue-button); color: #fff; }
 .btn-yellow { background: var(--yellow); color: var(--navy); }
 .btn-white { background: #fff; color: var(--navy); }
 
@@ -638,7 +639,7 @@ body.is-menu-open .mobile-menu-overlay {
 .orientacao-cta { margin-top: 18px; }
 .orientacao-list { margin-top: 2.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
 .orientacao-item { display: flex; gap: 1rem; border-radius: 1rem; border: 1px solid rgba(11,34,57,0.08); background: var(--bg-offwhite); padding: 1rem; }
-.orientacao-num { font-family: var(--font-display); flex-shrink: 0; display: flex; height: 2.5rem; width: 2.5rem; align-items: center; justify-content: center; border-radius: 0.75rem; background: var(--blue); font-size: 1.125rem; font-weight: 800; color: #fff; }
+.orientacao-num { font-family: var(--font-display); flex-shrink: 0; display: flex; height: 2.5rem; width: 2.5rem; align-items: center; justify-content: center; border-radius: 0.75rem; background: var(--blue-button); font-size: 1.125rem; font-weight: 800; color: #fff; }
 .orientacao-item-title { font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; color: var(--navy); }
 .orientacao-item-desc { margin-top: 0.125rem; font-size: 0.875rem; color: var(--text-slate-3); }
 
@@ -981,7 +982,7 @@ body.modalidade-modal-open { overflow: hidden; }
 /* =========================================================
    Formulário "Consultar meu plano" (modal, reaproveita .modalidade-modal)
    ========================================================= */
-.lead-modal-header { background: var(--blue); }
+.lead-modal-header { background: var(--blue-button); }
 .lead-form { display: flex; flex-direction: column; gap: 1rem; }
 .lead-field { display: flex; flex-direction: column; gap: 0.4rem; }
 .lead-field label { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.02em; color: #8fa9c2; }
