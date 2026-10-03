@@ -16,7 +16,63 @@ document.addEventListener('DOMContentLoaded', () => {
   setupConveniosCarousel();
   setupLeadForm();
   setupGalleryLightbox();
+  setupMobileMenuA11y();
 });
+
+// Pop-ups acessíveis pelo teclado: ao abrir, o foco vai para dentro do pop-up
+// e o Tab circula só entre os elementos dele; ao fechar, o foco volta para o
+// botão que o abriu. Retorna a função que desfaz isso (chamar ao fechar).
+function trapFocus(dialog) {
+  const previous = document.activeElement;
+  const selector = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  const focusables = () => Array.from(dialog.querySelectorAll(selector)).filter((el) => el.offsetParent !== null);
+
+  function onKeydown(e) {
+    if (e.key !== 'Tab') return;
+    const items = focusables();
+    if (!items.length) return;
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (e.shiftKey && (document.activeElement === first || !dialog.contains(document.activeElement))) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && (document.activeElement === last || !dialog.contains(document.activeElement))) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+
+  document.addEventListener('keydown', onKeydown);
+  if (!dialog.hasAttribute('tabindex')) dialog.setAttribute('tabindex', '-1');
+  (focusables()[0] || dialog).focus();
+
+  return () => {
+    document.removeEventListener('keydown', onKeydown);
+    if (previous && typeof previous.focus === 'function') previous.focus();
+  };
+}
+
+// Menu mobile: mantém aria-expanded/rótulo do botão em dia (leitores de tela
+// anunciam "menu, expandido") e permite fechar com Esc.
+function setupMobileMenuA11y() {
+  const toggle = document.querySelector('.menu-toggle');
+  if (!toggle) return;
+
+  const sync = () => {
+    const isOpen = document.body.classList.contains('is-menu-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+  };
+  new MutationObserver(sync).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+  sync();
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.body.classList.contains('is-menu-open')) {
+      document.body.classList.remove('is-menu-open');
+      toggle.focus();
+    }
+  });
+}
 
 // Deixa a rolagem do mouse mais suave (Lenis). Toque continua com a rolagem
 // nativa do celular — só o scroll de roda/trackpad no desktop é suavizado.
@@ -54,6 +110,8 @@ function setupSmoothScroll() {
       if (!target) return;
       e.preventDefault();
       lenis.scrollTo(target, { offset: -90 });
+      // Destinos focáveis (ex.: <main> do link "Pular para o conteúdo") recebem também o foco do teclado.
+      if (target.hasAttribute('tabindex')) target.focus({ preventScroll: true });
     });
   });
 }
@@ -270,16 +328,20 @@ function setupModalidadesModal() {
     ctaEl.href = `https://wa.me/${MODALIDADES_WHATSAPP}?text=${encodeURIComponent(message)}`;
   }
 
+  let releaseFocus = null;
+
   function open(index) {
     currentIndex = (index + MODALIDADES_ORDER.length) % MODALIDADES_ORDER.length;
     render(MODALIDADES_ORDER[currentIndex]);
     overlay.classList.add('is-open');
     document.body.classList.add('modalidade-modal-open');
+    if (!releaseFocus) releaseFocus = trapFocus(dialog);
   }
 
   function close() {
     overlay.classList.remove('is-open');
     document.body.classList.remove('modalidade-modal-open');
+    if (releaseFocus) { releaseFocus(); releaseFocus = null; }
   }
 
   buttons.forEach((btn, index) => {
@@ -309,13 +371,17 @@ function setupAvaliacaoModals() {
     const dialog = overlay.querySelector('.modalidade-modal');
     const closeBtn = overlay.querySelector('.modalidade-modal-close');
 
+    let releaseFocus = null;
+
     function open() {
       overlay.classList.add('is-open');
       document.body.classList.add('modalidade-modal-open');
+      if (!releaseFocus) releaseFocus = trapFocus(dialog);
     }
     function close() {
       overlay.classList.remove('is-open');
       document.body.classList.remove('modalidade-modal-open');
+      if (releaseFocus) { releaseFocus(); releaseFocus = null; }
     }
 
     trigger.addEventListener('click', open);
@@ -566,6 +632,7 @@ function setupGalleryLightbox() {
 
   let photos = [];
   let currentIndex = 0;
+  let releaseFocus = null;
 
   function render() {
     const photo = photos[currentIndex];
@@ -580,11 +647,13 @@ function setupGalleryLightbox() {
     render();
     overlay.classList.add('is-open');
     document.body.classList.add('gallery-lightbox-open');
+    if (!releaseFocus) releaseFocus = trapFocus(dialog);
   }
 
   function close() {
     overlay.classList.remove('is-open');
     document.body.classList.remove('gallery-lightbox-open');
+    if (releaseFocus) { releaseFocus(); releaseFocus = null; }
   }
 
   function next() {
@@ -599,6 +668,13 @@ function setupGalleryLightbox() {
   document.querySelectorAll('.unidade-gallery, .unidades-gallery').forEach((gallery) => {
     Array.from(gallery.querySelectorAll('img')).forEach((img, index) => {
       img.addEventListener('click', () => open(gallery, index));
+      // Fotos também abrem pelo teclado (Tab até a foto + Enter ou Espaço)
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', `Ampliar foto: ${img.alt}`);
+      img.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(gallery, index); }
+      });
     });
   });
 

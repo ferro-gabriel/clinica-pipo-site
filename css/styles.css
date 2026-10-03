@@ -17,6 +17,13 @@
   --amber: #ffb300;
   --amber-dark: #e8a10a;
 
+  /* Tons mais escuros das cores da marca, para TEXTO sobre fundo claro.
+     As cores acima são claras demais para texto pequeno; estas garantem
+     contraste mínimo de 4,5:1 (WCAG AA). Use as de cima em fundos e ícones. */
+  --blue-text: #0170ad;
+  --orange-text: #c93000;
+  --deep-orange-title: #e64a19; /* títulos grandes (exigem 3:1) */
+
   --bg-beige: #f6efe2;
   --bg-offwhite: #fbfaf6;
   --bg-yellow-light: #fff7d6;
@@ -29,7 +36,7 @@
   --text-slate-3: #54697c;
   --text-brown: #5b4a35;
   --text-brown-dark: #4b3f1c;
-  --text-muted: #6b8299;
+  --text-muted: #586c80;
 
   --font-body: "Nunito", sans-serif;
   --font-display: "Baloo 2", "Nunito", sans-serif;
@@ -41,6 +48,11 @@ html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 :focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+/* Link "Pular para o conteúdo": invisível até receber foco pelo teclado (Tab) */
+.skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 2000; padding: 0.75rem 1.25rem; border-radius: 0.75rem; background: var(--navy); color: #fff; font-weight: 800; text-decoration: none; }
+.skip-link:focus { top: 1rem; }
+main:focus { outline: none; }
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -85,7 +97,7 @@ iframe { border: 0; }
 
 .eyebrow { font-size: 18px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.25em; }
 @media (max-width: 767px) { .eyebrow { font-size: 16px; } }
-.eyebrow-orange { color: var(--orange); }
+.eyebrow-orange { color: var(--orange-text); }
 .eyebrow-yellow { color: var(--yellow); }
 
 .text-yellow { color: var(--yellow); }
@@ -374,13 +386,16 @@ body.is-menu-open { overflow: hidden; } /* Trava o fundo da tela para não rolar
 
   /* Deixa invisível e intocável por padrão */
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
 }
 
 /* Quando o menu está aberto */
 body.is-menu-open .mobile-menu-overlay {
   opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s;
   pointer-events: all;
 }
 
@@ -606,7 +621,7 @@ body.is-menu-open .mobile-menu-overlay {
 .stat-sub { margin-top: 0.25rem; font-size: 0.875rem; color: var(--text-muted); }
 .stat-stars { margin-top: 0.35rem; display: flex; align-items: center; justify-content: center; gap: 0.2rem; flex-wrap: nowrap; }
 .stat-google-links { margin-top: 0.25rem; display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: center; gap: 0.35rem; }
-.stat-google-link { display: inline-block; font-size: 0.875rem; font-weight: 700; color: var(--blue); text-decoration: underline; text-decoration-color: rgba(1,155,239,0.4); text-underline-offset: 2px; white-space: nowrap; }
+.stat-google-link { display: inline-block; font-size: 0.875rem; font-weight: 700; color: var(--blue-text); text-decoration: underline; text-decoration-color: rgba(1,112,173,0.4); text-underline-offset: 2px; white-space: nowrap; }
 .stat-google-link:hover { text-decoration-color: var(--blue); }
 .stat-google-sep { font-size: 0.875rem; font-weight: 700; color: var(--text-muted); }
 
@@ -699,7 +714,7 @@ body.is-menu-open .mobile-menu-overlay {
 .avaliacao-icon { display: inline-flex; flex-shrink: 0; height: 3rem; width: 3rem; align-items: center; justify-content: center; border-radius: 0.85rem; color: #fff; }
 .avaliacao-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: #000000; }
 .avaliacao-desc { margin-top: 1rem; color: #000000; }
-.avaliacao-more-link { display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 1rem; font-size: 0.9375rem; font-weight: 800; color: var(--blue); }
+.avaliacao-more-link { display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 1rem; font-size: 0.9375rem; font-weight: 800; color: var(--blue-text); }
 
 /* =========================================================
    Modalidades (grade com modal de detalhes)
@@ -815,7 +830,7 @@ body.modalidade-modal-open { overflow: hidden; }
 
 .aba-header { position: relative; display: flex; align-items: center; justify-content: center; gap: 0.75rem; }
 .icon-aba { color: var(--deep-orange); }
-.aba-title { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--deep-orange); }
+.aba-title { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--deep-orange-title); }
 @media (min-width: 640px) { .aba-title { font-size: 3rem; } }
 .aba-lead { position: relative; margin: 1.25rem 0 0; width: 100%; max-width: none; text-align: center; font-size: 0.875rem; line-height: 1.6; color: var(--text-brown); text-wrap: balance; }
 
@@ -1009,7 +1024,7 @@ body.modalidade-modal-open { overflow: hidden; }
 .faq-item:last-child { border-bottom: none; }
 .faq-question { display: flex; width: 100%; min-height: 64px; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.25rem 0; text-align: left; }
 .faq-q-text { font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; color: var(--navy); }
-.faq-item.is-active .faq-q-text { color: var(--blue); }
+.faq-item.is-active .faq-q-text { color: var(--blue-text); }
 .faq-icon-plus { color: var(--orange); }
 .faq-icon-minus { color: var(--blue); display: none; }
 .faq-item.is-active .faq-icon-plus { display: none; }
@@ -1155,8 +1170,8 @@ body.gallery-lightbox-open { overflow: hidden; }
 @media (min-width: 1024px) { .page-header-spacer { height: 5.1rem; } }
 
 .page-breadcrumb { padding: 1.5rem 0 0; font-size: 0.85rem; color: var(--text-muted); }
-.page-breadcrumb a { color: var(--blue); text-decoration: none; }
-.page-breadcrumb a:hover { text-decoration: underline; }
+.page-breadcrumb a { color: var(--blue-text); text-decoration: underline; text-underline-offset: 2px; }
+.page-breadcrumb a:hover { text-decoration-thickness: 2px; }
 
 .blog-hero { padding: 2.5rem 0 1rem; text-align: center; }
 .blog-hero h1 { font-family: var(--font-display); font-weight: 800; font-size: 44px; color: var(--navy); margin: 16px 0 0; }

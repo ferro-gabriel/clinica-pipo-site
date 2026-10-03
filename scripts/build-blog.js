@@ -15,6 +15,23 @@ const TEMPLATES_DIR = path.join(__dirname, 'templates');
 const SITE_URL = 'https://clinicadeautismopipo.com.br';
 const WHATSAPP = '5547999631084';
 
+// A cor da etiqueta (tagColor) é a cor da marca, clara demais para texto pequeno.
+// O texto usa um tom mais escuro da mesma cor, com contraste mínimo de 4,5:1 (WCAG AA).
+const TAG_TEXT_COLORS = {
+  '#019bef': '#0170ad',
+  '#3fb96b': '#2a7a47',
+  '#7c4dff': '#6f3bff',
+  '#e8368f': '#c7176f',
+  '#ff6b3d': '#c93000',
+  '#ff5722': '#c83000',
+  '#ffb300': '#8f6400',
+};
+
+function tagStyle(post, alpha) {
+  const color = String(post.tagColor || '').toLowerCase();
+  return `background:${color}${alpha};color:${TAG_TEXT_COLORS[color] || color}`;
+}
+
 const header = fs.readFileSync(path.join(TEMPLATES_DIR, 'header.html'), 'utf8');
 const footer = fs.readFileSync(path.join(TEMPLATES_DIR, 'footer.html'), 'utf8');
 
@@ -65,9 +82,9 @@ function loadPosts() {
 
 function relatedCard(post) {
   return `        <a href="${post.file}" class="blog-card">
-          <figure class="blog-card-photo"><img src="${post.cover}" alt="${post.title}" loading="lazy" /></figure>
+          <figure class="blog-card-photo"><img src="${post.cover}" alt="" loading="lazy" /></figure>
           <div class="blog-card-body">
-            <span class="blog-card-tag" style="background:${post.tagColor}22;color:${post.tagColor}">${post.tag}</span>
+            <span class="blog-card-tag" style="${tagStyle(post, '22')}">${post.tag}</span>
             <h4 class="blog-card-title">${post.title}</h4>
           </div>
         </a>`;
@@ -76,7 +93,7 @@ function relatedCard(post) {
 function buildPostPage(post, allPosts) {
   const related = allPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
   const relatedHtml = related.map(relatedCard).join('\n');
-  const jsonLd = JSON.stringify({
+  const jsonLd = JSON.stringify([{
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
@@ -91,7 +108,16 @@ function buildPostPage(post, allPosts) {
       logo: { '@type': 'ImageObject', url: `${SITE_URL}/assets/logo-pipo-cor-horizontal.png` },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/${post.file}` },
-  });
+    inLanguage: 'pt-BR',
+  }, {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Início', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog.html` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE_URL}/${post.file}` },
+    ],
+  }]);
 
   return `<!doctype html>
 <html lang="pt-BR">
@@ -103,6 +129,8 @@ function buildPostPage(post, allPosts) {
 <link rel="canonical" href="${SITE_URL}/${post.file}" />
 <meta property="og:url" content="${SITE_URL}/${post.file}" />
 <meta property="og:type" content="article" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="article:published_time" content="${post.date}" />
 <meta property="og:site_name" content="Clínica de Autismo Pipo" />
 <meta property="og:title" content="${post.title} | Blog Pipo" />
 <meta property="og:description" content="${post.description}" />
@@ -136,16 +164,17 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
 <script type="application/ld+json">${jsonLd}</script>
 </head>
 <body>
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
 
 ${header}
-<main>
+<main id="conteudo" tabindex="-1">
   <div class="section-inner section-inner-narrow">
     <p class="page-breadcrumb"><a href="index.html">Início</a> / <a href="blog.html">Blog</a> / ${post.title}</p>
   </div>
   <article class="article-section">
     <div class="section-inner section-inner-narrow">
       <div class="article-header">
-        <span class="blog-card-tag" style="background:${post.tagColor}1f;color:${post.tagColor}">${post.tag}</span>
+        <span class="blog-card-tag" style="${tagStyle(post, '1f')}">${post.tag}</span>
         <h1 class="article-title">${post.title}</h1>
         <div class="article-meta">
           <span><svg width="16" height="16"><use href="#icon-user"/></svg> ${post.authorName}</span>
@@ -186,10 +215,10 @@ ${footer}`;
 
 function blogCard(post) {
   return `      <a href="${post.file}" class="blog-card">
-        <figure class="blog-card-photo"><img src="${post.cover}" alt="${post.title}" loading="lazy" /></figure>
+        <figure class="blog-card-photo"><img src="${post.cover}" alt="" loading="lazy" /></figure>
         <div class="blog-card-body">
-          <span class="blog-card-tag" style="background:${post.tagColor}22;color:${post.tagColor}">${post.tag}</span>
-          <h3 class="blog-card-title">${post.title}</h3>
+          <span class="blog-card-tag" style="${tagStyle(post, '22')}">${post.tag}</span>
+          <h2 class="blog-card-title">${post.title}</h2>
           <p class="blog-card-excerpt">${post.description}</p>
           <div class="blog-card-meta">
             <span><svg width="14" height="14"><use href="#icon-calendar"/></svg> ${post.dateLabel}</span>
