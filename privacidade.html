@@ -8,12 +8,9 @@
 <meta name="robots" content="noindex, follow" />
 <link rel="canonical" href="https://clinicadeautismopipo.com.br/privacidade.html" />
 <link rel="icon" type="image/png" href="assets/mascote-rosto.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<!-- Fontes carregam sem travar a exibição da página (o texto aparece já com a fonte reserva) -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'" />
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" /></noscript>
+<!-- Fontes hospedadas no próprio site (mesmos arquivos do Google Fonts): sem conexões extras a outros servidores -->
+<link rel="preload" href="assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/baloo2-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="css/styles.css" />
 <!-- Meta Pixel Code -->
 <script>
@@ -23,7 +20,10 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+// Otimização: o script do Pixel só é baixado depois que a página terminou de carregar
+// (os eventos chamados antes ficam na fila e são enviados normalmente).
+f.addEventListener('load',function(){(f.requestIdleCallback||setTimeout)(function(){
+s.parentNode.insertBefore(t,s)},{timeout:2000})})}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1582453220006360');
 fbq('track', 'PageView');
