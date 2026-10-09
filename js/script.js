@@ -611,7 +611,23 @@ function setupConveniosCarousel() {
       track.scrollLeft = Math.max(target, 0);
     };
     centerBradesco();
-    window.addEventListener('resize', centerBradesco);
+    // Fontes e logos terminam de carregar depois e mudam a largura dos itens:
+    // centraliza de novo nesses momentos, a menos que a pessoa já tenha mexido no carrossel.
+    let userMoved = false;
+    ['pointerdown', 'wheel', 'keydown'].forEach((ev) => track.addEventListener(ev, () => { userMoved = true; }, { passive: true }));
+    [prevBtn, nextBtn].forEach((btn) => btn?.addEventListener('click', () => { userMoved = true; }));
+    const recenterIfIdle = () => { if (!userMoved) centerBradesco(); };
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(recenterIfIdle);
+    window.addEventListener('load', recenterIfIdle);
+    // Só recentraliza quando a LARGURA da tela muda (ex.: girar o celular). No celular,
+    // a barra de endereço some/aparece ao rolar e dispara 'resize' só na altura —
+    // recentralizar nesse caso fazia o carrossel voltar sozinho enquanto a pessoa navegava.
+    let lastWidth = window.innerWidth;
+    window.addEventListener('resize', () => {
+      if (window.innerWidth === lastWidth) return;
+      lastWidth = window.innerWidth;
+      centerBradesco();
+    });
   }
 }
 

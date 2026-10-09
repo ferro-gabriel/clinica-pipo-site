@@ -25,13 +25,19 @@ jobs:
       - name: Gerar páginas do blog
         run: npm run build:blog
 
+      # Remove espaços e comentários do CSS/JS só na cópia publicada (~25% menor).
+      # Os arquivos do repositório continuam legíveis para edição.
+      - name: Minificar CSS e JS
+        run: npm run build:minify
+
       - name: Cache-busting do CSS/JS/imagens (evita CDN servindo versão antiga)
         run: |
           v="${GITHUB_SHA:0:8}"
           find . -maxdepth 1 -name "*.html" -print0 | xargs -0 sed -i \
             -e "s#href=\"css/styles\.css\"#href=\"css/styles.css?v=${v}\"#g" \
             -e "s#src=\"js/script\.js\"#src=\"js/script.js?v=${v}\"#g" \
-            -e "s#src=\"assets/\([a-zA-Z0-9/_-]*\.\(jpg\|jpeg\|png\|webp\)\)\"#src=\"assets/\1?v=${v}\"#g"
+            -e "s#src=\"assets/\([a-zA-Z0-9/_-]*\.\(jpg\|jpeg\|png\|webp\)\)\"#src=\"assets/\1?v=${v}\"#g" \
+            -e "s#href=\"assets/\([a-zA-Z0-9/_-]*\.\(jpg\|jpeg\|png\|webp\)\)\"#href=\"assets/\1?v=${v}\"#g"
 
       - name: Publicar na Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5

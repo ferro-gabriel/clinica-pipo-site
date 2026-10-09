@@ -21,12 +21,12 @@
 <meta name="twitter:description" content="Avaliação especializada em Autismo (TEA), intervenção ABA e equipe multidisciplinar para crianças, adolescentes e adultos em Blumenau e Itapema, SC." />
 <meta name="twitter:image" content="https://clinicadeautismopipo.com.br/assets/og-image-preview.jpg" />
 <link rel="icon" type="image/png" href="assets/mascote-rosto.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<!-- Fontes carregam sem travar a exibição da página (o texto aparece já com a fonte reserva) -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'" />
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" /></noscript>
+<!-- Fontes hospedadas no próprio site (mesmos arquivos do Google Fonts): sem conexões extras a outros servidores -->
+<link rel="preload" href="assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/baloo2-latin.woff2" as="font" type="font/woff2" crossorigin />
+<!-- Em telas a partir de 1024px a foto do topo aparece ao lado do título: baixa com prioridade.
+     No celular ela fica mais abaixo e continua carregando só quando a pessoa rola. -->
+<link rel="preload" as="image" href="assets/hero-foto.jpg" media="(min-width: 1024px)" fetchpriority="high" />
 <link rel="stylesheet" href="css/styles.css" />
 <!-- Meta Pixel Code -->
 <script>
@@ -36,7 +36,10 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+// Otimização: o script do Pixel só é baixado depois que a página terminou de carregar
+// (os eventos chamados antes ficam na fila e são enviados normalmente).
+f.addEventListener('load',function(){(f.requestIdleCallback||setTimeout)(function(){
+s.parentNode.insertBefore(t,s)},{timeout:2000})})}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1582453220006360');
 fbq('track', 'PageView');
@@ -206,7 +209,7 @@ src="https://www.facebook.com/tr?id=1582453220006360&ev=PageView&noscript=1"
     <div class="hero-media-wrap">
       <div class="hero-media">
         <img src="assets/quebra-cabeca-2.png" alt="" aria-hidden="true" class="hero-puzzle-decor" loading="lazy" />
-        <img src="assets/hero-foto.jpg" alt="Espaço para foto do hero" class="hero-media-img" loading="lazy" />
+        <img src="assets/hero-foto.jpg" alt="Profissionais da Clínica de Autismo Pipo sorrindo em um dos consultórios" class="hero-media-img" loading="lazy" />
       </div>
     </div>
   </div>
